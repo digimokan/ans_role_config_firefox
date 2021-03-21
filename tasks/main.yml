@@ -1,0 +1,6 @@
+- name: "Install Firefox, and select browser extensions"
+  ansible.builtin.include_tasks: install/main.yml
+
+- name: "Configure default Firefox browser settings"
+  ansible.builtin.include_tasks: config/main.yml
+

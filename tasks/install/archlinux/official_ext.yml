@@ -1,0 +1,29 @@
+# Available browser extensions in the official Arch Linux repos:
+#   https://archlinux.org/packages/?q=firefox%20extension
+#   https://archlinux.org/groups/any/firefox-addons/
+# NOTE: not all official firefox extensions may be in these lists
+
+- name: "Install 'firefox-extension-https-everywhere' package"
+  community.general.pacman:
+    name: firefox-extension-https-everywhere
+    state: present
+  become: true
+  become_user: root
+  when: install_https_everywhere_ext
+
+- name: "Install 'firefox-ublock-origin' package"
+  community.general.pacman:
+    name: firefox-ublock-origin
+    state: present
+  become: true
+  become_user: root
+  when: install_ublock_origin_ext
+
+- name: "Install 'firefox-tridactyl' package"
+  community.general.pacman:
+    name: firefox-tridactyl
+    state: present
+  become: true
+  become_user: root
+  when: install_tridactyl_ext
+
