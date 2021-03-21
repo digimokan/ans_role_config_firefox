@@ -1,0 +1,14 @@
+- name: "Set show-default-menu in new tab page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show default menu in new tab"
+    setting: "browser.newtabpage.enabled"
+    value: "{{ 'true' if (new_tab_page_setting == 'default') else 'false' }}"
+
+- name: "Set new-tab-page-url to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  vars:
+    description: "new-tab-page url"
+    setting: "browser.newtab.url"
+    value: "{{ 'about:blank' if (new_tab_page_setting == 'default') else new_tab_page_setting }}"
+

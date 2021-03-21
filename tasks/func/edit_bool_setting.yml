@@ -1,0 +1,5 @@
+- name: "Edit firefox boolean setting: {{ description }}"
+  ansible.builtin.include_tasks: edit_setting.yml
+  vars:
+    setting_line: "pref(\"{{ setting }}\", {{ value }});"
+
