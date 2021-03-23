@@ -1,3 +1,10 @@
+- name: "Set the home page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  vars:
+    description: "home page url"
+    setting: "browser.startup.homepage"
+    value: "{{ home_page }}"
+
 - name: "Set show-default-menu in new tab page to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:

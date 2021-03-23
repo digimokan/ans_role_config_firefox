@@ -1,4 +1,4 @@
-- name: "Edit firefox setting: {{ description }}"
+- name: "Edit firefox setting: {{ description }} to '{{ value }}'"
   ansible.builtin.blockinfile:
     path: "{{ settings_file_path }}"
     insertafter: EOF
