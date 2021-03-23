@@ -1,3 +1,3 @@
-# url to show on opening a new tab (or "default" for the default menu screen)
-new_tab_page_setting: "https://www.google.com"
+# show default firefox menu-page on opening new tab (if false, show blank page)
+show_menu_page_in_new_tab: false
 

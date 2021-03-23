@@ -1,9 +1,9 @@
 - name: "Edit firefox setting: {{ description }}"
   ansible.builtin.blockinfile:
-    path: "/usr/lib/firefox/browser/defaults/preferences/all-ansible.js"
+    path: "{{ settings_file_path }}"
     insertafter: EOF
     block: "{{ setting_line }}"
-    marker: "# {mark} ANSIBLE MANAGED BLOCK: {{ description }}"
+    marker: "// {mark} ANSIBLE MANAGED BLOCK: {{ description }}"
     create: yes
     state: present
     owner: 'root'

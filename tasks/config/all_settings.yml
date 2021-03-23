@@ -1,0 +1,7 @@
+- name: "Set show-default-menu in new tab page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show default menu in new tab"
+    setting: "browser.newtabpage.enabled"
+    value: "{{ 'true' if show_menu_page_in_new_tab else 'false' }}"
+
