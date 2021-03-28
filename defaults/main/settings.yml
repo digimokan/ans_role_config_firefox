@@ -10,3 +10,10 @@ hide_http_in_url_bar: false
 # guess 'www.mozilla.com' if 'mozilla' entered in url bar
 guess_domain_names: false
 
+# update installed extensions automatically
+auto_update_extensions: false
+
+# update firefox 'system' add-ons automatically
+# warning: these add-ons can be 'critical' - Arch Linux enables this by default
+auto_update_system_addons: true
+
