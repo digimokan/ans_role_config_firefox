@@ -47,10 +47,10 @@
     setting: "browser.newtabpage.activity-stream.asrouter.userprefs.cfr"
     value: "{{ 'true' if recommend_extensions else 'false' }}"
 
-- name: "Set send-app-crash-reports to '{{ value }}'"
+- name: "Set app-crash-report-url to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_string_setting.yml
   vars:
-    description: "send application crash reports"
+    description: "application crash-report url"
     setting: "breakpad.reportURL"
     value: "{{ 'https://crash-stats.mozilla.org/report/index/' if send_app_crash_reports else '' }}"
 
