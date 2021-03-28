@@ -17,3 +17,15 @@ auto_update_extensions: false
 # warning: these add-ons can be 'critical' - Arch Linux enables this by default
 auto_update_system_addons: true
 
+# recommend/suggest related extensions (in the menu-page, and elsewhere)
+recommend_extensions: false
+
+# send application crash reports to mozilla servers
+send_app_crash_reports: false
+
+# send browser-tab crash reports to mozilla servers
+send_browser_tab_crash_reports: false
+
+# query user with crash-report dialog
+show_crash_report_dialog: false
+

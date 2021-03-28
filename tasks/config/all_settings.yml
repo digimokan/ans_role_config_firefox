@@ -40,3 +40,31 @@
     setting: "extensions.systemAddon.update.enabled"
     value: "{{ 'true' if auto_update_system_addons else 'false' }}"
 
+- name: "Set enable-extension-recommendation to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "recommend extensions"
+    setting: "browser.newtabpage.activity-stream.asrouter.userprefs.cfr"
+    value: "{{ 'true' if recommend_extensions else 'false' }}"
+
+- name: "Set send-app-crash-reports to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  vars:
+    description: "send application crash reports"
+    setting: "breakpad.reportURL"
+    value: "{{ 'https://crash-stats.mozilla.org/report/index/' if send_app_crash_reports else '' }}"
+
+- name: "Set send-browser-tab-crash-reports to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "send browser-tab crash reports"
+    setting: "browser.tabs.crashReporting.sendReport"
+    value: "{{ 'true' if send_browser_tab_crash_reports else 'false' }}"
+
+- name: "Set show-crash-report-dialog to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show crash-report dialog"
+    setting: "browser.crashReports.unsubmittedCheck.enabled"
+    value: "{{ 'true' if show_crash_report_dialog else 'false' }}"
+
