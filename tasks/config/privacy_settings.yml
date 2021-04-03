@@ -26,10 +26,3 @@
     setting: "browser.discovery.enabled"
     value: "{{ 'true' if recommend_extensions else 'false' }}"
 
-- name: "Set enable-menu-page-extension-recommendation to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "recommend menu-page extensions"
-    setting: "browser.newtabpage.activity-stream.asrouter.userprefs.cfr"
-    value: "{{ 'true' if recommend_extensions else 'false' }}"
-

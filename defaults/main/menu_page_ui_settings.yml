@@ -1,0 +1,15 @@
+# show the firefox menu-page on opening new tab (if false, show blank page)
+show_menu_page_in_new_tab: false
+
+# show mozilla news/snippets in the firefox menu-page
+show_mozilla_news_in_menu_page: false
+
+# show visited-pages in menu-page highlight-row
+show_visited_pages_in_menu_page_highlight_row: false
+
+# show bookmarks in menu-page highlight-row
+show_bookmarks_in_menu_page_highlight_row: false
+
+# show downloads in menu-page highlight-row
+show_downloads_in_menu_page_highlight_row: false
+
