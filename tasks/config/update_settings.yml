@@ -12,6 +12,13 @@
     setting: "extensions.systemAddon.update.enabled"
     value: "{{ 'true' if auto_update_system_addons else 'false' }}"
 
+- name: "Set enable-auto-search-engine-updates to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "update search-engines automatically"
+    setting: "browser.search.update"
+    value: "{{ 'true' if auto_update_search_engines else 'false' }}"
+
 - name: "Set enable-auto-extension-updates to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:

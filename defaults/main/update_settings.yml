@@ -5,6 +5,9 @@ auto_update_app: false
 # warning: these add-ons can be 'critical' - Arch Linux enables this by default
 auto_update_system_addons: true
 
+# update search engines automatically
+auto_update_search_engines: false
+
 # update installed extensions automatically
 auto_update_extensions: false
 
