@@ -40,6 +40,13 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
+- name: "Set do-normandy-first-run to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "do normandy-first-run"
+    setting: "app.normandy.first_run"
+    value: "{{ 'false' if skip_first_run_pages else 'true' }}"
+
 - name: "Set done-first-run to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
