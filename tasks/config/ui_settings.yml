@@ -1,0 +1,28 @@
+- name: "Set the home page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  vars:
+    description: "home page url"
+    setting: "browser.startup.homepage"
+    value: "{{ home_page }}"
+
+- name: "Set show-default-menu in new tab page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show default menu in new tab"
+    setting: "browser.newtabpage.enabled"
+    value: "{{ 'true' if show_menu_page_in_new_tab else 'false' }}"
+
+- name: "Set hide-http in url bar to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "hide 'http://' in url bar"
+    setting: "browser.urlbar.trimURLs"
+    value: "{{ 'true' if hide_http_in_url_bar else 'false' }}"
+
+- name: "Set guess-domain-names to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "guess domain names"
+    setting: "browser.fixup.alternate.enabled"
+    value: "{{ 'true' if guess_domain_names else 'false' }}"
+

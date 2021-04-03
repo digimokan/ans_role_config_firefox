@@ -1,0 +1,12 @@
+# url to show when "home" button is clicked ('about:home' for firefox menu-page)
+home_page: 'https://www.google.com'
+
+# show the firefox menu-page on opening new tab (if false, show blank page)
+show_menu_page_in_new_tab: false
+
+# hide 'http://' and single trailing '/' in url bar
+hide_http_in_url_bar: false
+
+# guess 'www.mozilla.com' if 'mozilla' entered in url bar
+guess_domain_names: false
+

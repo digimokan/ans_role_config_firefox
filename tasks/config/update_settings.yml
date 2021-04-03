@@ -1,0 +1,21 @@
+- name: "Set enable-auto-app-update to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "update firefox-application automatically"
+    setting: "app.update.enabled"
+    value: "{{ 'true' if auto_update_app else 'false' }}"
+
+- name: "Set enable-auto-system-addon-updates to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "update system-addons automatically"
+    setting: "extensions.systemAddon.update.enabled"
+    value: "{{ 'true' if auto_update_system_addons else 'false' }}"
+
+- name: "Set enable-auto-extension-updates to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "update extensions automatically"
+    setting: "extensions.update.enabled"
+    value: "{{ 'true' if auto_update_extensions else 'false' }}"
+

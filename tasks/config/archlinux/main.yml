@@ -11,7 +11,7 @@
   become: true
   become_user: root
 
-- ansible.builtin.include_tasks: ../all_settings.yml
+- ansible.builtin.include_tasks: ../settings.yml
   vars:
     settings_file_path: '/usr/lib/firefox/mozilla.cfg'
 

@@ -1,0 +1,6 @@
+- ansible.builtin.include_tasks: privacy_settings.yml
+
+- ansible.builtin.include_tasks: ui_settings.yml
+
+- ansible.builtin.include_tasks: update_settings.yml
+

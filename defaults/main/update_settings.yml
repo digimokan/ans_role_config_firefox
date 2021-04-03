@@ -1,0 +1,10 @@
+# update the main firefox application automatically
+auto_update_app: false
+
+# update firefox 'system' add-ons automatically
+# warning: these add-ons can be 'critical' - Arch Linux enables this by default
+auto_update_system_addons: true
+
+# update installed extensions automatically
+auto_update_extensions: false
+
