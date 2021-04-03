@@ -12,5 +12,5 @@ hide_http_in_url_bar: false
 guess_domain_names: false
 
 # show live/debounced search suggestions during typing in search-bar or url-bar
-show_live_search_suggestions: false
+show_live_search_suggestions: true
 
