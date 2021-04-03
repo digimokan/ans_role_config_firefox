@@ -15,5 +15,5 @@ show_live_search_suggestions: true
 show_other_bookmarks_section: false
 
 # show privacy, getting-started, etc pages on the first-run of firefox browser
-show_first_run_pages: false
+show_first_run_pages: true
 
