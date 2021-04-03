@@ -12,11 +12,18 @@
     setting: "browser.newtabpage.enabled"
     value: "{{ 'true' if show_menu_page_in_new_tab else 'false' }}"
 
+- name: "Set download-mozilla-news for new tab page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "download mozilla news for new-tab-default-menu"
+    setting: "browser.aboutHomeSnippets.updateUrl"
+    value: "{{ 'true' if show_mozilla_news_in_menu_page else 'false' }}"
+
 - name: "Set show-mozilla-news in new tab page to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
     description: "show mozilla news in new-tab-default-menu"
-    setting: "browser.aboutHomeSnippets.updateUrl"
+    setting: "browser.newtabpage.activity-stream.feeds.snippets"
     value: "{{ 'true' if show_mozilla_news_in_menu_page else 'false' }}"
 
 - name: "Set hide-http in url bar to '{{ value }}'"
