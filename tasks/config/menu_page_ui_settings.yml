@@ -36,3 +36,10 @@
                    show_bookmarks_in_menu_page_highlight_row or
                    show_downloads_in_menu_page_highlight_row }}"
 
+- name: "Set show-visited-pages for highlight-row to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show menu-page-highlight-row visited pages"
+    setting: "browser.newtabpage.activity-stream.feeds.section.highlights.includeVisited"
+    value: "{{ 'true' if show_visited_pages_in_menu_page_highlight_row else 'false' }}"
+

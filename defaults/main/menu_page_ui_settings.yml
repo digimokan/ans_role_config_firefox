@@ -5,7 +5,7 @@ show_menu_page_in_new_tab: false
 show_mozilla_news_in_menu_page: false
 
 # show visited-pages in menu-page highlight-row
-show_visited_pages_in_menu_page_highlight_row: false
+show_visited_pages_in_menu_page_highlight_row: true
 
 # show bookmarks in menu-page highlight-row
 show_bookmarks_in_menu_page_highlight_row: false
