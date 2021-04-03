@@ -40,3 +40,10 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
+- name: "Set show-home-page-on-first-run to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show home-page on first run"
+    setting: "browser.startup.firstrunSkipsHomepage"
+    value: "{{ 'true' if show_first_run_pages else 'false' }}"
+
