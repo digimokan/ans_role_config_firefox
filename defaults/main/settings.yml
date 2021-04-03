@@ -20,7 +20,7 @@ auto_update_system_addons: true
 # recommend/suggest related extensions (in the menu-page, and elsewhere)
 recommend_extensions: false
 
-# send application crash reports to mozilla servers
+# send application crash reports to mozilla crash-report server
 send_app_crash_reports: false
 
 # send browser-tab crash reports to mozilla servers
