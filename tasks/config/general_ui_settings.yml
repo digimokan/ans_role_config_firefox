@@ -40,10 +40,31 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
-- name: "Set show-home-page-on-first-run to '{{ value }}'"
+- name: "Set show-first-run-pages to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "show home-page on first run"
-    setting: "browser.startup.firstrunSkipsHomepage"
-    value: "{{ 'true' if show_first_run_pages else 'false' }}"
+    description: "show default pages on first run"
+    setting: "app.normandy.first_run"
+    value: "{{ 'false' if skip_first_run_pages else 'true' }}"
+
+# - name: "Set show-a-default-browser-check-tab-on-first-run to '{{ value }}'"
+#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
+#   vars:
+#     description: "show a default-browser-check-tab on first run"
+#     setting: "browser.shell.skipDefaultBrowserCheckOnFirstRun"
+#     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
+
+# - name: "Set show-a-home-page-tab-on-first-run to '{{ value }}'"
+#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
+#   vars:
+#     description: "show a home-page-tab on first run"
+#     setting: "browser.startup.firstrunSkipsHomepage"
+#     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
+
+# - name: "Set show-a-privacy-page-tab-on-first-run to '{{ value }}'"
+#   ansible.builtin.include_tasks: func/edit_string_setting.yml
+#   vars:
+#     description: "show a privacy-page-tab on first run"
+#     setting: "datareporting.policy.firstRunURL"
+#     value: "{{ 'about:home' if skip_first_run_pages else 'https://www.mozilla.org/privacy/firefox/' }}"
 
