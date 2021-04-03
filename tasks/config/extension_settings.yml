@@ -1,0 +1,21 @@
+- name: "Set enable-pocket-feature '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "enable Pocket feature"
+    setting: "browser.pocket.enabled"
+    value: "{{ 'true' if enable_pocket_extension else 'false' }}"
+
+- name: "Set enable-pocket-extension '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "enable Pocket extension"
+    setting: "extensions.pocket.enabled"
+    value: "{{ 'true' if enable_pocket_extension else 'false' }}"
+
+- name: "Set enable-pocket-in-menu-page '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "enable Pocket in menu-page"
+    setting: "browser.newtabpage.activity-stream.feeds.section.topstories"
+    value: "{{ 'true' if enable_pocket_extension else 'false' }}"
+

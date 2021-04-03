@@ -4,3 +4,5 @@
 
 - ansible.builtin.include_tasks: update_settings.yml
 
+- ansible.builtin.include_tasks: extension_settings.yml
+
