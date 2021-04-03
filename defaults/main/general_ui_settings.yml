@@ -11,3 +11,6 @@ guess_domain_names: false
 # show live/debounced search suggestions during typing in search-bar or url-bar
 show_live_search_suggestions: true
 
+# show the "other" section in bookmarks
+show_other_bookmarks_section: false
+

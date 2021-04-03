@@ -1,5 +1,5 @@
 # show the firefox menu-page on opening new tab (if false, show blank page)
-show_menu_page_in_new_tab: false
+show_menu_page_in_new_tab: true
 
 # show mozilla news/snippets in the firefox menu-page
 show_mozilla_news_in_menu_page: false

@@ -33,3 +33,10 @@
     setting: "browser.urlbar.suggest.searches"
     value: "{{ 'true' if show_live_search_suggestions else 'false' }}"
 
+- name: "Set show-other-bookmarks-section to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show other-bookmarks section"
+    setting: "browser.toolbars.bookmarks.showOtherBookmarks"
+    value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
+
