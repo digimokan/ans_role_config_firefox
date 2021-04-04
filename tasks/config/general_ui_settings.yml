@@ -40,6 +40,13 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
+- name: "Set check-default-browser to 'false'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "check default browser"
+    setting: "browser.shell.checkDefaultBrowser"
+    value: 'false'
+
 - name: "Set do-normandy-first-run to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
