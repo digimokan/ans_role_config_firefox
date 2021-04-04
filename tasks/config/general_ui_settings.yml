@@ -85,7 +85,7 @@
     value: "ignore"
 
 - name: "Set open privacy-policy-tab-on-first-run to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
     description: "open privacy-policy-tab on first run"
     setting: "datareporting.policy.dataSubmissionPolicyBypassNotification"
