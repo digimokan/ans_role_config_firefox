@@ -40,20 +40,20 @@
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
     description: "show menu-page-highlight-row visited pages"
-    setting: "browser.newtabpage.activity-stream.feeds.section.highlights.includeVisited"
+    setting: "browser.newtabpage.activity-stream.section.highlights.includeVisited"
     value: "{{ 'true' if show_visited_pages_in_menu_page_highlight_row else 'false' }}"
 
 - name: "Set show-bookmarks for highlight-row to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
     description: "show menu-page-highlight-row bookmarks"
-    setting: "browser.newtabpage.activity-stream.feeds.section.highlights.includeBookmarks"
+    setting: "browser.newtabpage.activity-stream.section.highlights.includeBookmarks"
     value: "{{ 'true' if show_bookmarks_in_menu_page_highlight_row else 'false' }}"
 
 - name: "Set show-downloads for highlight-row to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
     description: "show menu-page-highlight-row downloads"
-    setting: "browser.newtabpage.activity-stream.feeds.section.highlights.includeDownloads"
+    setting: "browser.newtabpage.activity-stream.section.highlights.includeDownloads"
     value: "{{ 'true' if show_downloads_in_menu_page_highlight_row else 'false' }}"
 
