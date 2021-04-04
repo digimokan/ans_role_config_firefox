@@ -26,3 +26,10 @@
     setting: "browser.discovery.enabled"
     value: "{{ 'true' if recommend_extensions else 'false' }}"
 
+- name: "Set use-dns-over-https to '{{ 'true' if use_dns_over_https else 'false' }}'"
+  ansible.builtin.include_tasks: func/edit_numeric_setting.yml
+  vars:
+    description: "use-dns-over-https"
+    setting: "network.trr.mode"
+    value: "{{ 2 if use_dns_over_https else 5 }}"
+
