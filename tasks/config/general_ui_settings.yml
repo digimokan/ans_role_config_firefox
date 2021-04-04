@@ -68,6 +68,13 @@
 #     setting: "browser.shell.skipDefaultBrowserCheckOnFirstRun"
 #     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
 
+- name: "Set new-profile startup welcome-url to 'about:config'"
+  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  vars:
+    description: "new-profile startup welcome-url"
+    setting: "startup.homepage_welcome_url"
+    value: "about:config"
+
 - name: "Set skipped-default-browser-check-tab-on-first-run to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
