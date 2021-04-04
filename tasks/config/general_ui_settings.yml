@@ -40,6 +40,9 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
+
+
+# move this one to a different section!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - name: "Set check-default-browser to 'false'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
@@ -47,19 +50,22 @@
     setting: "browser.shell.checkDefaultBrowser"
     value: 'false'
 
-- name: "Set do-normandy-first-run to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "do normandy-first-run"
-    setting: "app.normandy.first_run"
-    value: "{{ 'false' if skip_first_run_pages else 'true' }}"
 
-- name: "Set done-first-run to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "skip first run"
-    setting: "doh-rollout.doneFirstRun"
-    value: "{{ 'true' if skip_first_run_pages else 'false' }}"
+
+
+# - name: "Set do-normandy-first-run to '{{ value }}'"
+#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
+#   vars:
+#     description: "do normandy-first-run"
+#     setting: "app.normandy.first_run"
+#     value: "{{ 'false' if skip_first_run_pages else 'true' }}"
+
+# - name: "Set done-first-run to '{{ value }}'"
+#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
+#   vars:
+#     description: "skip first run"
+#     setting: "doh-rollout.doneFirstRun"
+#     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
 
 # - name: "Set show-a-default-browser-check-tab-on-first-run to '{{ value }}'"
 #   ansible.builtin.include_tasks: func/edit_bool_setting.yml
@@ -69,12 +75,12 @@
 #     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
 
 # this did change the page url....................................................
-- name: "Set new-profile startup welcome-url to 'about:config'"
-  ansible.builtin.include_tasks: func/edit_string_setting.yml
-  vars:
-    description: "new-profile startup welcome-url"
-    setting: "startup.homepage_welcome_url"
-    value: "about:home"
+# - name: "Set new-profile startup welcome-url to 'about:config'"
+#   ansible.builtin.include_tasks: func/edit_string_setting.yml
+#   vars:
+#     description: "new-profile startup welcome-url"
+#     setting: "startup.homepage_welcome_url"
+#     value: "about:home"
 
 # keep this one:
 - name: "Set redirect-to-welcome-after-update to 'ignore'"
@@ -82,7 +88,8 @@
   vars:
     description: "redirect-to-welcome-after-update"
     setting: "browser.startup.homepage_override.mstone"
-    value: "ignore"
+    value: 'ignore'
+  when: skip_first_run_pages
 
 - name: "Set open privacy-policy-tab-on-first-run to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
@@ -90,26 +97,4 @@
     description: "open privacy-policy-tab on first run"
     setting: "datareporting.policy.dataSubmissionPolicyBypassNotification"
     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
-
-
-- name: "Set skipped-default-browser-check-tab-on-first-run to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "did-skip-default-browser-check-tab on first run"
-    setting: "browser.shell.didSkipDefaultBrowserCheckOnFirstRun"
-    value: "{{ 'true' if skip_first_run_pages else 'false' }}"
-
-# - name: "Set show-a-home-page-tab-on-first-run to '{{ value }}'"
-#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
-#   vars:
-#     description: "show a home-page-tab on first run"
-#     setting: "browser.startup.firstrunSkipsHomepage"
-#     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
-
-# - name: "Set show-a-privacy-page-tab-on-first-run to '{{ value }}'"
-#   ansible.builtin.include_tasks: func/edit_string_setting.yml
-#   vars:
-#     description: "show a preset-tab on first run"
-#     setting: "datareporting.policy.firstRunURL"
-#     value: "{{ 'about:home' if skip_first_run_pages else 'https://www.mozilla.org/privacy/firefox/' }}"
 
