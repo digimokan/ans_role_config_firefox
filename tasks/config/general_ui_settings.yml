@@ -40,49 +40,13 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
-
-
-# move this one to a different section!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-- name: "Set check-default-browser to 'false'"
+- name: "Set check-if-default-browser to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "check default browser"
+    description: "check if default browser"
     setting: "browser.shell.checkDefaultBrowser"
-    value: 'false'
+    value: "{{ 'true' if check_if_default_browser else 'false' }}"
 
-
-
-
-# - name: "Set do-normandy-first-run to '{{ value }}'"
-#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
-#   vars:
-#     description: "do normandy-first-run"
-#     setting: "app.normandy.first_run"
-#     value: "{{ 'false' if skip_first_run_pages else 'true' }}"
-
-# - name: "Set done-first-run to '{{ value }}'"
-#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
-#   vars:
-#     description: "skip first run"
-#     setting: "doh-rollout.doneFirstRun"
-#     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
-
-# - name: "Set show-a-default-browser-check-tab-on-first-run to '{{ value }}'"
-#   ansible.builtin.include_tasks: func/edit_bool_setting.yml
-#   vars:
-#     description: "show a default-browser-check-tab on first run"
-#     setting: "browser.shell.skipDefaultBrowserCheckOnFirstRun"
-#     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
-
-# this did change the page url....................................................
-# - name: "Set new-profile startup welcome-url to 'about:config'"
-#   ansible.builtin.include_tasks: func/edit_string_setting.yml
-#   vars:
-#     description: "new-profile startup welcome-url"
-#     setting: "startup.homepage_welcome_url"
-#     value: "about:home"
-
-# keep this one:
 - name: "Set redirect-to-welcome-after-update to 'ignore'"
   ansible.builtin.include_tasks: func/edit_string_setting.yml
   vars:
