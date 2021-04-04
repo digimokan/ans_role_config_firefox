@@ -68,12 +68,20 @@
 #     setting: "browser.shell.skipDefaultBrowserCheckOnFirstRun"
 #     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
 
+# this did change the page url....................................................
 - name: "Set new-profile startup welcome-url to 'about:config'"
   ansible.builtin.include_tasks: func/edit_string_setting.yml
   vars:
     description: "new-profile startup welcome-url"
     setting: "startup.homepage_welcome_url"
-    value: "about:config"
+    value: "about:home"
+
+- name: "Set redirect-to-welcome-after-update to 'ignore'"
+  ansible.builtin.include_tasks: func/edit_string_setting.yml
+  vars:
+    description: "redirect-to-welcome-after-update"
+    setting: "browser.startup.homepage_override.mstone"
+    value: "ignore"
 
 - name: "Set skipped-default-browser-check-tab-on-first-run to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
