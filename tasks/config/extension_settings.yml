@@ -1,3 +1,10 @@
+- name: "Set allow-user-extension-installations '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "allow-user-extension-installations"
+    setting: "xpinstall.enabled"
+    value: "{{ 'true' if allow_user_extension_install else 'false' }}"
+
 - name: "Set enable-pocket-feature '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
