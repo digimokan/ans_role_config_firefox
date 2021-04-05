@@ -1,5 +1,5 @@
 - name: "Set allow-user-extension-installations '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  ansible.builtin.include_tasks: func/lock_bool_setting.yml
   vars:
     description: "allow-user-extension-installations"
     setting: "xpinstall.enabled"
