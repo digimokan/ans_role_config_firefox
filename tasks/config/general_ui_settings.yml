@@ -40,6 +40,13 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
+- name: "Set warn-on-close-tabs to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "warn-on-close-tabs"
+    setting: "browser.tabs.warnOnClose"
+    value: "{{ 'true' if warn_on_close_tabs else 'false' }}"
+
 - name: "Set check-if-default-browser to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:

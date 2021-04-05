@@ -14,6 +14,9 @@ show_live_search_suggestions: true
 # show the "other" section in bookmarks
 show_other_bookmarks_section: false
 
+# show a warning dialog when closing the browser, if multiple tabs are open
+warn_on_close_tabs: false
+
 # check and prompt to make firefox the default browser
 check_if_default_browser: false
 
