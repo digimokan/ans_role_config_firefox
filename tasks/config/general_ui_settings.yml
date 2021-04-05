@@ -40,6 +40,13 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
+- name: "Set show-restored-tabs-on-startup to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_numeric_setting.yml
+  vars:
+    description: "show-restored-tabs-on-startup"
+    setting: "browser.startup.page"
+    value: "{{ 3 if show_restored_tabs_on_startup else 1 }}"
+
 - name: "Set warn-on-close-tabs to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:

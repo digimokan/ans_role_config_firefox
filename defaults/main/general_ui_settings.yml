@@ -14,6 +14,9 @@ show_live_search_suggestions: true
 # show the "other" section in bookmarks
 show_other_bookmarks_section: false
 
+# on startup, show restored tabs from last session (true), or show home page (false)
+show_restored_tabs_on_startup: true
+
 # show a warning dialog when closing the browser, if multiple tabs are open
 warn_on_close_tabs: false
 
