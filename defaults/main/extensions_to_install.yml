@@ -7,3 +7,6 @@ install_ublock_origin_ext: true
 # install and enable the Tridactyl browser extension
 install_tridactyl_ext: false
 
+# install built-in google-widevine add-on for DRM content (e.g. Netflix)
+install_google_widevine_drm_addon: true
+

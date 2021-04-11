@@ -26,3 +26,10 @@
     setting: "browser.newtabpage.activity-stream.feeds.section.topstories"
     value: "{{ 'true' if enable_pocket_extension else 'false' }}"
 
+- name: "Set install-google-widevine-drm-add-on '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "install google-widevine drm add-on"
+    setting: "media.eme.enabled"
+    value: "{{ 'true' if install_google_widevine_drm_addon else 'false' }}"
+
