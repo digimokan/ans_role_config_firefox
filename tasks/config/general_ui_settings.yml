@@ -26,20 +26,6 @@
     setting: "browser.shell.checkDefaultBrowser"
     value: "{{ 'true' if check_if_default_browser else 'false' }}"
 
-- name: "Set show-search-bar-suggestions to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "show search-bar suggestions"
-    setting: "browser.search.suggest.enabled"
-    value: "{{ 'true' if show_live_search_suggestions else 'false' }}"
-
-- name: "Set show-url-bar-suggestions to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "show url-bar suggestions"
-    setting: "browser.urlbar.suggest.searches"
-    value: "{{ 'true' if show_live_search_suggestions else 'false' }}"
-
 - name: "Set show-other-bookmarks-section to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:

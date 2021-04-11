@@ -1,0 +1,6 @@
+# show live/debounced search suggestions during typing in search-bar or url-bar
+show_live_search_suggestions: true
+
+# show inline autocomplete in url-bar (show/highlight matches after typed text)
+show_urlbar_inline_autocomplete: true
+
