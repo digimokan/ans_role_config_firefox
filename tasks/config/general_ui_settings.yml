@@ -19,12 +19,12 @@
     setting: "browser.tabs.warnOnClose"
     value: "{{ 'true' if warn_on_close_tabs else 'false' }}"
 
-- name: "Set switch-to-new-tab-url-immediately to '{{ value }}'"
+- name: "Set open-new-tab-url-in-background to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "switch to new-tab-url immediately"
+    description: "open new-tab-url in background"
     setting: "browser.tabs.loadInBackground"
-    value: "{{ 'false' if switch_to_new_tab_url_immediately else 'true' }}"
+    value: "{{ 'true' if open_new_tab_url_in_background else 'false' }}"
 
 - name: "Set check-if-default-browser to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml

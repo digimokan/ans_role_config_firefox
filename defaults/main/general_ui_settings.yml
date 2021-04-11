@@ -8,8 +8,9 @@ show_restored_tabs_on_startup: true
 # show a warning dialog when closing the browser, if multiple tabs are open
 warn_on_close_tabs: false
 
-# switch to new tab immediately, when clicking url that opens new tab
-switch_to_new_tab_url_immediately: true
+# open new tab in background, when clicking url that opens new tab
+# note: if false, switch to the new tab immediately
+open_new_tab_url_in_background: false
 
 # check and prompt to make firefox the default browser
 check_if_default_browser: false
