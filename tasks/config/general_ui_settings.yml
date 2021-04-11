@@ -5,19 +5,26 @@
     setting: "browser.startup.homepage"
     value: "{{ home_page }}"
 
-- name: "Set hide-http in url bar to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+- name: "Set show-restored-tabs-on-startup to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_numeric_setting.yml
   vars:
-    description: "hide 'http://' in url bar"
-    setting: "browser.urlbar.trimURLs"
-    value: "{{ 'true' if hide_http_in_url_bar else 'false' }}"
+    description: "show-restored-tabs-on-startup"
+    setting: "browser.startup.page"
+    value: "{{ 3 if show_restored_tabs_on_startup else 1 }}"
 
-- name: "Set guess-domain-names to '{{ value }}'"
+- name: "Set warn-on-close-tabs to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "guess domain names"
-    setting: "browser.fixup.alternate.enabled"
-    value: "{{ 'true' if guess_domain_names else 'false' }}"
+    description: "warn-on-close-tabs"
+    setting: "browser.tabs.warnOnClose"
+    value: "{{ 'true' if warn_on_close_tabs else 'false' }}"
+
+- name: "Set check-if-default-browser to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "check if default browser"
+    setting: "browser.shell.checkDefaultBrowser"
+    value: "{{ 'true' if check_if_default_browser else 'false' }}"
 
 - name: "Set show-search-bar-suggestions to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
@@ -40,26 +47,12 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
-- name: "Set show-restored-tabs-on-startup to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_numeric_setting.yml
-  vars:
-    description: "show-restored-tabs-on-startup"
-    setting: "browser.startup.page"
-    value: "{{ 3 if show_restored_tabs_on_startup else 1 }}"
-
-- name: "Set warn-on-close-tabs to '{{ value }}'"
+- name: "Set enable-built-in-password-manager to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "warn-on-close-tabs"
-    setting: "browser.tabs.warnOnClose"
-    value: "{{ 'true' if warn_on_close_tabs else 'false' }}"
-
-- name: "Set check-if-default-browser to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "check if default browser"
-    setting: "browser.shell.checkDefaultBrowser"
-    value: "{{ 'true' if check_if_default_browser else 'false' }}"
+    description: "enable built-in password manager"
+    setting: "signon.rememberSignons"
+    value: "{{ 'true' if enable_password_manager else 'false' }}"
 
 - name: "Set redirect-to-welcome-after-update to '{{ 'yes' if skip_first_run_pages else 'no' }}'"
   ansible.builtin.include_tasks: func/edit_string_setting.yml
@@ -74,4 +67,18 @@
     description: "open privacy-policy-tab on first run"
     setting: "datareporting.policy.dataSubmissionPolicyBypassNotification"
     value: "{{ 'true' if skip_first_run_pages else 'false' }}"
+
+- name: "Set hide-http in url bar to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "hide 'http://' in url bar"
+    setting: "browser.urlbar.trimURLs"
+    value: "{{ 'true' if hide_http_in_url_bar else 'false' }}"
+
+- name: "Set guess-domain-names to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "guess domain names"
+    setting: "browser.fixup.alternate.enabled"
+    value: "{{ 'true' if guess_domain_names else 'false' }}"
 

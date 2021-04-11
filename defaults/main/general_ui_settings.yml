@@ -2,18 +2,6 @@
 # set to 'about:home' to show the firefox menu-page
 home_page: 'https://www.google.com'
 
-# hide 'http://' and single trailing '/' in url-bar
-hide_http_in_url_bar: false
-
-# guess 'www.mozilla.com' if 'mozilla' entered in url-bar
-guess_domain_names: false
-
-# show live/debounced search suggestions during typing in search-bar or url-bar
-show_live_search_suggestions: true
-
-# show the "other" section in bookmarks
-show_other_bookmarks_section: false
-
 # on startup, show restored tabs from last session (true), or show home page (false)
 show_restored_tabs_on_startup: true
 
@@ -23,6 +11,21 @@ warn_on_close_tabs: false
 # check and prompt to make firefox the default browser
 check_if_default_browser: false
 
+# show live/debounced search suggestions during typing in search-bar or url-bar
+show_live_search_suggestions: true
+
+# show the "other" section in bookmarks
+show_other_bookmarks_section: false
+
+# enable firefox's built-in password manager
+enable_password_manager: false
+
 # skip privacy, getting-started, etc pages on the first-run of firefox browser
 skip_first_run_pages: true
+
+# hide 'http://' and single trailing '/' in url-bar
+hide_http_in_url_bar: false
+
+# guess 'www.mozilla.com' if 'mozilla' entered in url-bar
+guess_domain_names: false
 
