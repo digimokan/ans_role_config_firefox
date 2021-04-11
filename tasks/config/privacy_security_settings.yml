@@ -1,3 +1,24 @@
+- name: "Set enable-built-in-password-manager to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "enable built-in password manager"
+    setting: "signon.rememberSignons"
+    value: "{{ 'true' if enable_password_manager else 'false' }}"
+
+- name: "Set save-user-form-data to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "save user form data"
+    setting: "browser.formfill.enable"
+    value: "{{ 'true' if save_user_form_data else 'false' }}"
+
+- name: "Set auto-fill-form-data to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "auto-fill form data"
+    setting: "signon.autofillForms"
+    value: "{{ 'true' if auto_fill_form_data else 'false' }}"
+
 - name: "Set app-crash-report-url to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_string_setting.yml
   vars:

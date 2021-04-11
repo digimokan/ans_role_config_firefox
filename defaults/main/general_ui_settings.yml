@@ -17,9 +17,6 @@ show_live_search_suggestions: true
 # show the "other" section in bookmarks
 show_other_bookmarks_section: false
 
-# enable firefox's built-in password manager
-enable_password_manager: false
-
 # skip privacy, getting-started, etc pages on the first-run of firefox browser
 skip_first_run_pages: true
 

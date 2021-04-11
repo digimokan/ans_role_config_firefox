@@ -47,13 +47,6 @@
     setting: "browser.toolbars.bookmarks.showOtherBookmarks"
     value: "{{ 'true' if show_other_bookmarks_section else 'false' }}"
 
-- name: "Set enable-built-in-password-manager to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "enable built-in password manager"
-    setting: "signon.rememberSignons"
-    value: "{{ 'true' if enable_password_manager else 'false' }}"
-
 - name: "Set redirect-to-welcome-after-update to '{{ 'yes' if skip_first_run_pages else 'no' }}'"
   ansible.builtin.include_tasks: func/edit_string_setting.yml
   vars:

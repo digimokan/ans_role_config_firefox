@@ -1,3 +1,12 @@
+# enable firefox's built-in password manager
+enable_password_manager: false
+
+# save all form data entered by user
+save_user_form_data: true
+
+# auto-fill forms with saved user form data
+auto_fill_form_data: true
+
 # send application crash reports to mozilla crash-report server
 send_app_crash_reports: false
 

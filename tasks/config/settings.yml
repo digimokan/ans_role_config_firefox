@@ -2,7 +2,7 @@
 #   http://kb.mozillazine.org/About:config_entries
 #   https://github.com/pyllyukko/user.js/blob/master/user.js
 
-- ansible.builtin.include_tasks: privacy_settings.yml
+- ansible.builtin.include_tasks: privacy_security_settings.yml
 
 - ansible.builtin.include_tasks: general_ui_settings.yml
 
