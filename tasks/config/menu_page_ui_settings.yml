@@ -5,19 +5,26 @@
     setting: "browser.newtabpage.enabled"
     value: "{{ 'true' if show_menu_page_in_new_tab else 'false' }}"
 
-- name: "Set download-mozilla-news for menu-page to '{{ value }}'"
+- name: "Set show-menu-page-top-sites-row to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "download mozilla news for new-tab-default-menu"
-    setting: "browser.aboutHomeSnippets.updateUrl"
-    value: "{{ 'true' if show_mozilla_news_in_menu_page else 'false' }}"
+    description: "show menu-page-top-sites-row"
+    setting: "browser.newtabpage.activity-stream.feeds.topsites"
+    value: "{{ 'true' if show_top_sites_row else 'false' }}"
 
-- name: "Set show-mozilla-news in menu-page to '{{ value }}'"
+- name: "Set show-sponsored-sites for top-sites-row to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "show mozilla news in new-tab-default-menu"
-    setting: "browser.newtabpage.activity-stream.feeds.snippets"
-    value: "{{ 'true' if show_mozilla_news_in_menu_page else 'false' }}"
+    description: "show menu-page-top-sites-row sponsored sites"
+    setting: "browser.newtabpage.activity-stream.showSponsored"
+    value: "{{ 'true' if show_sponsored_in_top_sites_row else 'false' }}"
+
+- name: "Set show-sponsored-site-tiles for top-sites-row to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show menu-page-top-sites-row sponsored site tiles"
+    setting: "browser.newtabpage.activity-stream.showSponsoredTopSites"
+    value: "{{ 'true' if show_sponsored_in_top_sites_row else 'false' }}"
 
 - name: "Set enable-menu-page-extension-recommendation to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
@@ -56,4 +63,18 @@
     description: "show menu-page-highlight-row downloads"
     setting: "browser.newtabpage.activity-stream.section.highlights.includeDownloads"
     value: "{{ 'true' if show_downloads_in_menu_page_highlight_row else 'false' }}"
+
+- name: "Set download-mozilla-news for menu-page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "download mozilla news for new-tab-default-menu"
+    setting: "browser.aboutHomeSnippets.updateUrl"
+    value: "{{ 'true' if show_mozilla_news_in_menu_page else 'false' }}"
+
+- name: "Set show-mozilla-news in menu-page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show mozilla news in new-tab-default-menu"
+    setting: "browser.newtabpage.activity-stream.feeds.snippets"
+    value: "{{ 'true' if show_mozilla_news_in_menu_page else 'false' }}"
 
