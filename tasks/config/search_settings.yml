@@ -1,3 +1,10 @@
+- name: "Set show-dedicated-search-bar to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show dedicated search-bar"
+    setting: "browser.search.widget.inNavBar"
+    value: "{{ 'true' if show_dedicated_search_bar else 'false' }}"
+
 - name: "Set show-search-bar-suggestions to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
