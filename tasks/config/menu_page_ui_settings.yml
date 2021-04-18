@@ -36,33 +36,40 @@
 - name: "Set show-menu-page-highlight-row to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "show menu-page highlight-row"
+    description: "show menu-page highlight-rows"
     setting: "browser.newtabpage.activity-stream.feeds.section.highlights"
     value: "{{ 'true' if show_page else 'false' }}"
-    show_page: "{{ show_visited_pages_in_menu_page_highlight_row or
-                   show_bookmarks_in_menu_page_highlight_row or
-                   show_downloads_in_menu_page_highlight_row }}"
+    show_page: "{{ show_visited_pages_in_menu_page_highlight_rows or
+                   show_bookmarks_in_menu_page_highlight_rows or
+                   show_downloads_in_menu_page_highlight_rows }}"
 
-- name: "Set show-visited-pages for highlight-row to '{{ value }}'"
+- name: "Set number-of-menu-page-highlight-rows to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_numeric_setting.yml
+  vars:
+    description: "number of menu-page highlight rows"
+    setting: "browser.newtabpage.activity-stream.section.highlights.rows"
+    value: "{{ num_highlight_rows }}"
+
+- name: "Set show-visited-pages for highlight-rows to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "show menu-page-highlight-row visited pages"
+    description: "show menu-page-highlight-rows visited pages"
     setting: "browser.newtabpage.activity-stream.section.highlights.includeVisited"
-    value: "{{ 'true' if show_visited_pages_in_menu_page_highlight_row else 'false' }}"
+    value: "{{ 'true' if show_visited_pages_in_menu_page_highlight_rows else 'false' }}"
 
-- name: "Set show-bookmarks for highlight-row to '{{ value }}'"
+- name: "Set show-bookmarks for highlight-rows to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "show menu-page-highlight-row bookmarks"
+    description: "show menu-page-highlight-rows bookmarks"
     setting: "browser.newtabpage.activity-stream.section.highlights.includeBookmarks"
-    value: "{{ 'true' if show_bookmarks_in_menu_page_highlight_row else 'false' }}"
+    value: "{{ 'true' if show_bookmarks_in_menu_page_highlight_rows else 'false' }}"
 
-- name: "Set show-downloads for highlight-row to '{{ value }}'"
+- name: "Set show-downloads for highlight-rows to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
-    description: "show menu-page-highlight-row downloads"
+    description: "show menu-page-highlight-rows downloads"
     setting: "browser.newtabpage.activity-stream.section.highlights.includeDownloads"
-    value: "{{ 'true' if show_downloads_in_menu_page_highlight_row else 'false' }}"
+    value: "{{ 'true' if show_downloads_in_menu_page_highlight_rows else 'false' }}"
 
 - name: "Set download-mozilla-news for menu-page to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml

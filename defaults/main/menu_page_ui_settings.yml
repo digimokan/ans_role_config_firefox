@@ -7,14 +7,17 @@ show_top_sites_row: true
 # show sponsored sites (amazon, facebook, etc) in top-sites-row
 show_sponsored_in_top_sites_row: false
 
-# show visited-pages in menu-page highlight-row
-show_visited_pages_in_menu_page_highlight_row: false
+# show visited-pages in menu-page highlight-rows
+num_highlight_rows: 2
 
-# show bookmarks in menu-page highlight-row
-show_bookmarks_in_menu_page_highlight_row: true
+# show visited-pages in menu-page highlight-rows
+show_visited_pages_in_menu_page_highlight_rows: false
 
-# show downloads in menu-page highlight-row
-show_downloads_in_menu_page_highlight_row: false
+# show bookmarks in menu-page highlight-rows
+show_bookmarks_in_menu_page_highlight_rows: true
+
+# show downloads in menu-page highlight-rows
+show_downloads_in_menu_page_highlight_rows: false
 
 # show mozilla news/snippets in menu-page
 show_mozilla_news_in_menu_page: false
