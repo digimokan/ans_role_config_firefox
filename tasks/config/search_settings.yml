@@ -5,20 +5,6 @@
     setting: "browser.search.widget.inNavBar"
     value: "{{ 'true' if show_dedicated_search_bar else 'false' }}"
 
-- name: "Set disable-selectable-search-provider to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_bool_setting.yml
-  vars:
-    description: "disable selectable search-provider"
-    setting: "browser.search.geoSpecificDefaults"
-    value: "false"
-
-- name: "Set default-search-provider to '{{ value }}'"
-  ansible.builtin.include_tasks: func/edit_string_setting.yml
-  vars:
-    description: "set default-search-provider"
-    setting: "browser.search.defaultenginename.US"
-    value: "{{ default_search_provider }}"
-
 - name: "Set show-search-bar-suggestions to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:
