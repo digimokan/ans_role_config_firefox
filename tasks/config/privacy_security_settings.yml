@@ -47,6 +47,27 @@
     setting: "browser.discovery.enabled"
     value: "{{ 'true' if recommend_extensions else 'false' }}"
 
+- name: "Set send-technical-and-interaction-data-to-mozilla to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "send technical and interaction data to mozilla"
+    setting: "datareporting.healthreport.uploadEnabled"
+    value: "{{ 'true' if send_tech_interaction_data_to_mozilla else 'false' }}"
+
+- name: "Set opt-in-and-send-studies-data-to-mozilla to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "opt in and send studies data to mozilla"
+    setting: "app.shield.optoutstudies.enabled"
+    value: "{{ 'true' if opt_in_and_send_studies_data_to_mozilla else 'false' }}"
+
+- name: "Set pioneer-new-studies-for-mozilla to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "pioneer new studies for mozilla"
+    setting: "toolkit.telemetry.pioneer-new-studies-available"
+    value: "{{ 'true' if opt_in_and_send_studies_data_to_mozilla else 'false' }}"
+
 - name: "Set use-dns-over-https to '{{ 'true' if use_dns_over_https else 'false' }}'"
   ansible.builtin.include_tasks: func/edit_numeric_setting.yml
   vars:

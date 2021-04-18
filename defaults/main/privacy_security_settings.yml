@@ -19,6 +19,12 @@ show_crash_report_dialog: false
 # recommend/suggest related extensions (in the menu-page, and elsewhere)
 recommend_extensions: false
 
+# send "technical and interaction" data to mozilla
+send_tech_interaction_data_to_mozilla: false
+
+# participate in "studies" and send the studies data to mozilla
+opt_in_and_send_studies_data_to_mozilla: false
+
 # use dns-over-https feature (2020-04: mozilla still uses cloudflare for this)
 use_dns_over_https: false
 
