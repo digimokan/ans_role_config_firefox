@@ -9,7 +9,7 @@
   ansible.builtin.include_tasks: func/edit_string_setting.yml
   vars:
     description: "set default-search-provider"
-    setting: "browser.search.selectedEngine"
+    setting: "browser.search.selectedEngineInDialog"
     value: "{{ default_search_provider }}"
 
 - name: "Set show-search-bar-suggestions to '{{ value }}'"
