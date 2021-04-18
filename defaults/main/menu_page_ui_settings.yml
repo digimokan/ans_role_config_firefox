@@ -11,7 +11,7 @@ show_sponsored_in_top_sites_row: false
 num_highlight_rows: 2
 
 # show visited-pages in menu-page highlight-rows
-show_visited_pages_in_menu_page_highlight_rows: false
+show_visited_pages_in_menu_page_highlight_rows: true
 
 # show bookmarks in menu-page highlight-rows
 show_bookmarks_in_menu_page_highlight_rows: true
