@@ -1,6 +1,9 @@
 # show dedicated search-bar (if false, do search in url-bar)
 show_dedicated_search_bar: false
 
+# default search for search-bar or url-bar ("Google", "DuckDuckGo", or "Bing")
+default_search_provider: "DuckDuckGo"
+
 # show live/debounced search suggestions during typing in search-bar or url-bar
 show_live_search_suggestions: true
 
