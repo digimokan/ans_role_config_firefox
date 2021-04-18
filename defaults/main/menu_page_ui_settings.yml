@@ -2,7 +2,7 @@
 show_menu_page_in_new_tab: true
 
 # show top-sites-row (aka most-visited pages) in menu-page
-show_top_sites_row: true
+show_top_sites_row: false
 
 # show sponsored sites (amazon, facebook, etc) in top-sites-row
 show_sponsored_in_top_sites_row: false
