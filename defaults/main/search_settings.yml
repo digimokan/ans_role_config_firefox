@@ -7,6 +7,21 @@ show_live_search_suggestions: true
 # show live url-bar search suggestions above all other matches
 show_live_url_bar_search_suggestions_first: false
 
+# if showing live url-bar search suggestions, include matched bookmarks
+show_live_url_bar_bookmark_suggestions: false
+
+# if showing live url-bar search suggestions, include matched search engine hits
+show_live_url_bar_search_engine_suggestions: true
+
+# if showing live url-bar search suggestions, include matched browser history
+show_live_url_bar_history_suggestions: true
+
+# if showing live url-bar search suggestions, include matched open page names
+show_live_url_bar_open_page_suggestions: false
+
+# if showing live url-bar search suggestions, include matched mozilla top sites
+show_live_url_bar_top_site_suggestions: false
+
 # show url-bar inline autocomplete (show/highlight matched url after typed text)
 show_urlbar_inline_autocomplete: true
 
