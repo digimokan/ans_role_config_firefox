@@ -19,6 +19,13 @@
     setting: "browser.urlbar.suggest.searches"
     value: "{{ 'true' if show_live_search_suggestions else 'false' }}"
 
+- name: "Set show-live-url-bar-search-suggestions-first to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "show live url-bar search suggestions first"
+    setting: "browser.urlbar.showSearchSuggestionsFirst"
+    value: "{{ 'true' if show_live_url_bar_search_suggestions_first else 'false' }}"
+
 - name: "Set show-url-bar-inline-autocomplete to '{{ value }}'"
   ansible.builtin.include_tasks: func/edit_bool_setting.yml
   vars:

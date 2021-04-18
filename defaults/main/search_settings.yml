@@ -4,6 +4,9 @@ show_dedicated_search_bar: false
 # show live/debounced search suggestions during typing in search-bar or url-bar
 show_live_search_suggestions: true
 
+# show live url-bar search suggestions above all other matches
+show_live_url_bar_search_suggestions_first: false
+
 # show url-bar inline autocomplete (show/highlight matched url after typed text)
 show_urlbar_inline_autocomplete: true
 
