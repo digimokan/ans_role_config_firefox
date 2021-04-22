@@ -35,23 +35,23 @@
 
 - name: "Emplace settings file for tridactyl extension"
   block:
-    - name: "Create tridactyl config dir at {{ settings_file_path | dirname }}"
+    - name: "Create tridactyl config dir at {{ tridactylrc_path | dirname }}"
       ansible.builtin.file:
-        path: "{{ settings_file_path | dirname }}"
+        path: "{{ tridactylrc_path | dirname }}"
         state: directory
         owner: "{{ user_name }}"
         group: "{{ user_name }}"
         mode: '755'
-    - name: "Add custom tridactyl settings file at '{{ settings_file_path }}'"
+    - name: "Add custom tridactyl settings file at '{{ tridactylrc_path }}'"
       ansible.builtin.template:
-        dest: "{{ settings_file_path }}"
+        dest: "{{ tridactylrc_path }}"
         src: 'tridactylrc.j2'
         owner: "{{ user_name }}"
         group: "{{ user_name }}"
         mode: '644'
         force: yes
   vars:
-    settings_file_path: "/home/{{ user_name }}/.config/tridactyl/tridactylrc"
+    tridactylrc_path: "/home/{{ user_name }}/.config/tridactyl/tridactylrc"
   become: true
   become_user: root
   when: install_tridactyl_ext
