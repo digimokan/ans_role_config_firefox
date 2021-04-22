@@ -61,6 +61,10 @@ See the role `defaults` file, for overridable vars:
 
   * [defaults/main.yml](../defaults/main.yml)
 
+Define these _required_ vars for the role:
+
+  * `user_name`: name of primary Firefox user to configure the application for
+
 ## Contributing
 
 * Feel free to report a bug or propose a feature by opening a new
