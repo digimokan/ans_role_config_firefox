@@ -12,6 +12,7 @@ Install and configure the Firefox browser.
 * [Quick Start](#quick-start)
     * [Use From Playbook](#use-from-playbook)
 * [Role Options](#role-options)
+* [Role Dependencies](#role-dependencies)
 * [Contributing](#contributing)
 
 ## Purpose
@@ -60,6 +61,10 @@ Install and configure the Firefox browser.
 See the role `defaults` file, for overridable vars:
 
   * [defaults/main.yml](../defaults/main.yml)
+
+## Role Dependencies
+
+* [ans_role_config_unofficial_packages](https://github.com/digimokan/ans_role_config_unofficial_packages)
 
 Define these _required_ vars for the role:
 

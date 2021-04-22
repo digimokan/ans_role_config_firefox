@@ -8,3 +8,6 @@
 - name: "Install official Firefox browser extensions"
   ansible.builtin.include_tasks: official_ext.yml
 
+- name: "Install unofficial Firefox browser extensions"
+  ansible.builtin.include_tasks: unofficial_ext.yml
+
