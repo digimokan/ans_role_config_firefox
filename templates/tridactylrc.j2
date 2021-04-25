@@ -1,5 +1,9 @@
 " vim: set filetype=vim:
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEYBINDINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Navigation
 bind j scrollline 10
 bind k scrollline -10
@@ -11,8 +15,15 @@ bind [ followpage prev
 bind ] followpage next
 bind r reload
 bind R reloadall
+bind o open
+bind t fillcmdline tabopen
 bind gu urlparent
 bind gr urlroot
+
+" Find
+bind / fillcmdline find
+bind n findnext 1
+bind N findnext -1
 
 " Tabs
 bind x composite tabclose | tab #
@@ -26,10 +37,6 @@ bind X undo
 bind f hint
 bind F hint -t
 
-" Bookmarks
-bind B bmark
-bind b bmarks
-
 " Copy And Paste
 bind yy clipboard yank
 
@@ -37,4 +44,38 @@ bind yy clipboard yank
 bind <C-y> fullscreen
 bind <ArrowUp> zoom +10 true
 bind <ArrowDown> zoom -10 true
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETTINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" page to show in a new tab (due to tridactyl overrides, cannot use menu-page)
+set newtab {{ home_page }}
+
+" open new tab to right of current tab ('next'), or at end of all tabs ('last')
+tabopenpos last
+
+" display tridactyl mode indicator in lower right corner of page
+set modeindicator true
+
+" show partially-completed commands, dynamically, with mode indicator
+set modeindicatorshowkeys true
+
+" when there is only one hint displayed, automatically follow it
+set hintautoselect true
+
+" display hints in uppercase
+set hintuppercase false
+
+" number of most recent history results to use
+set historyresults 50
+
+" jump to first match for 'find' command
+set incsearch true
+
+" number of chars typed before triggering incsearch
+set minincsearchlen 2
+
+" search engine to use for 'open [some-search-string]' command
+searchengine {{ default_search_provider }}
 

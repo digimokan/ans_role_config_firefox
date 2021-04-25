@@ -1,3 +1,8 @@
+# default search for search-bar or url-bar ('Google', 'DuckDuckGo', or 'Bing')
+# Note: currently non-functional, since firefox restricts ability to set this
+# Note: it WILL be used when opening tabs and pages via Tridactyl
+default_search_provider: 'DuckDuckGo'
+
 # show dedicated search-bar (if false, do search in url-bar)
 show_dedicated_search_bar: false
 
