@@ -15,7 +15,7 @@ bind [ followpage prev
 bind ] followpage next
 bind r reload
 bind R reloadall
-bind o open
+bind o fillcmdline open
 bind t fillcmdline tabopen
 bind gu urlparent
 bind gr urlroot
@@ -24,6 +24,7 @@ bind gr urlroot
 bind / fillcmdline find
 bind n findnext 1
 bind N findnext -1
+bind <Space>n nohlsearch
 
 " Tabs
 bind x composite tabclose | tab #
@@ -53,7 +54,7 @@ bind <ArrowDown> zoom -10 true
 set newtab {{ home_page }}
 
 " open new tab to right of current tab ('next'), or at end of all tabs ('last')
-tabopenpos last
+set tabopenpos last
 
 " display tridactyl mode indicator in lower right corner of page
 set modeindicator true
@@ -77,5 +78,5 @@ set incsearch true
 set minincsearchlen 2
 
 " search engine to use for 'open [some-search-string]' command
-searchengine {{ default_search_provider }}
+set searchengine {{ default_search_provider }}
 
