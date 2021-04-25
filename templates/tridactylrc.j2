@@ -1,6 +1,40 @@
 " vim: set filetype=vim:
 
 " Navigation
+bind j scrollline 10
+bind k scrollline -10
 bind , tabprev
 bind . tabnext
+bind h back
+bind l forward
+bind [ followpage prev
+bind ] followpage next
+bind r reload
+bind R reloadall
+bind gu urlparent
+bind gr urlroot
+
+" Tabs
+bind x composite tabclose | tab #
+bind yt tabduplicate
+bind < tabmove -1
+bind > tabmove +1
+bind X undo
+
+" Links
+
+bind f hint
+bind F hint -t
+
+" Bookmarks
+bind B bmark
+bind b bmarks
+
+" Copy And Paste
+bind yy clipboard yank
+
+" View
+bind <C-y> fullscreen
+bind <ArrowUp> zoom +10 true
+bind <ArrowDown> zoom -10 true
 
