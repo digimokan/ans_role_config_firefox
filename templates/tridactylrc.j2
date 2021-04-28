@@ -77,6 +77,11 @@ set incsearch true
 " number of chars typed before triggering incsearch
 set minincsearchlen 2
 
+" search hotkeys to use with open or new-tab
+{% for item in search_providers %}
+set searchurls.{{ item.hotkeys }} {{ item.search_url }}
+{% endfor %}
+
 " search engine to use for 'open [some-search-string]' command
-set searchengine {{ default_search_provider }}
+set searchengine {{ search_providers[0].hotkeys }}
 

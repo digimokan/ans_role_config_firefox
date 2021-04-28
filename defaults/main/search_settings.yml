@@ -1,8 +1,3 @@
-# default search for search-bar or url-bar ('Google', 'DuckDuckGo', or 'Bing')
-# Note: currently non-functional, since firefox restricts ability to set this
-# Note: it WILL be used when opening tabs and pages via Tridactyl
-default_search_provider: 'DuckDuckGo'
-
 # show dedicated search-bar (if false, do search in url-bar)
 show_dedicated_search_bar: false
 
@@ -29,4 +24,22 @@ show_live_url_bar_top_site_suggestions: false
 
 # show url-bar inline autocomplete (show/highlight matched url after typed text)
 show_urlbar_inline_autocomplete: true
+
+# selectable search providers (currently only used by Tridactyl extension)
+# Note: Tridactyl will use the first row in this list as the default provider
+search_providers:
+  - { engine_name: 'DuckDuckGo', hotkeys: 'd' search_url: 'https://duckduckgo.com/?q=%s' }
+  - { engine_name: 'Amazon', hotkeys: 'a', search_url: 'https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Daps&field-keywords=%s' }
+  - { engine_name: 'ArchWiki', hotkeys: 'aw', search_url: 'https://wiki.archlinux.org/?search=%s' }
+  - { engine_name: 'CppReference', hotkeys: 'c', search_url: 'https://en.cppreference.com/?search=%s' }
+  - { engine_name: 'CPlusPlus', hotkeys: 'cp', search_url: 'http://www.cplusplus.com/search.do?q=%s' }
+  - { engine_name: 'eBay', hotkeys: 'e' search_url: 'https://ebay.com/sch/%s' }
+  - { engine_name: 'FreeBSD Man Pages', hotkeys: 'man' search_url: 'https://www.freebsd.org/cgi/man.cgi?query=%s' }
+  - { engine_name: 'GitHub', hotkeys: 'gh', search_url: 'https://github.com/search?q=%s' }
+  - { engine_name: 'Google', hotkeys: 'g', search_url: 'https://www.google.com/search?hl=en&q=%s' }
+  - { engine_name: 'Quora', hotkeys: 'q', search_url: 'https://www.quora.com/search?q=%s' }
+  - { engine_name: 'Reddit', hotkeys: 'r', search_url: 'https://www.reddit.com/search?q=%s' }
+  - { engine_name: 'Stack Overflow', hotkeys: 's', search_url: 'https://www.stackoverflow.com/search?q=%s' }
+  - { engine_name: 'Wikipedia', hotkeys: 'w', search_url: 'https://en.wikipedia.org/?search=%s' }
+  - { engine_name: 'YouTube', hotkeys: 'y', search_url: 'https://www.youtube.com/results?search_query=%s' }
 
