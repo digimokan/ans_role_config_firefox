@@ -34,7 +34,7 @@ search_providers:
   - { engine_name: 'CppReference', hotkeys: 'c', search_url: 'https://en.cppreference.com/?search=%s' }
   - { engine_name: 'CPlusPlus', hotkeys: 'cp', search_url: 'http://www.cplusplus.com/search.do?q=%s' }
   - { engine_name: 'eBay', hotkeys: 'e', search_url: 'https://ebay.com/sch/%s' }
-  - { engine_name: 'FreeBSD Man Pages', hotkeys: 'man' search_url: 'https://www.freebsd.org/cgi/man.cgi?query=%s' }
+  - { engine_name: 'FreeBSD Man Pages', hotkeys: 'man', search_url: 'https://www.freebsd.org/cgi/man.cgi?query=%s' }
   - { engine_name: 'GitHub', hotkeys: 'gh', search_url: 'https://github.com/search?q=%s' }
   - { engine_name: 'Google', hotkeys: 'g', search_url: 'https://www.google.com/search?hl=en&q=%s' }
   - { engine_name: 'Quora', hotkeys: 'q', search_url: 'https://www.quora.com/search?q=%s' }
