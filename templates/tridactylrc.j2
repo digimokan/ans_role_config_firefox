@@ -5,6 +5,9 @@
 " see documentation: enter 'help' in tridactyl cmd line
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Modes
+bind ; fillcmdline_notrail
+
 " Navigation
 bind j scrollline 10
 bind k scrollline -10
@@ -30,8 +33,10 @@ bind <Space>n nohlsearch
 " Tabs
 bind x composite tabclose | tab #
 bind yt tabduplicate
-bind < tabmove -1
-bind > tabmove +1
+" bind < tabmove -1
+" bind > tabmove +1
+set nmaps.< tabmove -1
+set nmaps.> tabmove +1
 bind X undo
 
 " Links
