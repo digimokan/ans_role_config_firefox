@@ -6,50 +6,48 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Modes
-bind ; fillcmdline_notrail
+jsb tri.config.set("nmaps", ";", "fillcmdline_notrail")
 
 " Navigation
-bind j scrollline 10
-bind k scrollline -10
-bind , tabprev
-bind . tabnext
-bind h back
-bind l forward
-bind [ followpage prev
-bind ] followpage next
-bind r reload
-bind R reloadall
-bind o fillcmdline open
-bind t fillcmdline tabopen
-bind gu urlparent
-bind gr urlroot
+jsb tri.config.set("nmaps", "j", "scrollline 10")
+jsb tri.config.set("nmaps", "k", "scrollline -10")
+jsb tri.config.set("nmaps", ",", "tabprev")
+jsb tri.config.set("nmaps", ".", "tabnext")
+jsb tri.config.set("nmaps", "h", "back")
+jsb tri.config.set("nmaps", "l", "forward")
+jsb tri.config.set("nmaps", "[", "followpage prev")
+jsb tri.config.set("nmaps", "]", "followpage next")
+jsb tri.config.set("nmaps", "r", "reload")
+jsb tri.config.set("nmaps", "R", "reloadall")
+jsb tri.config.set("nmaps", "o", "fillcmdline open")
+jsb tri.config.set("nmaps", "t", "fillcmdline tabopen")
+jsb tri.config.set("nmaps", "gu", "urlparent")
+jsb tri.config.set("nmaps", "gr", "urlroot")
 
 " Find
-bind / fillcmdline find
-bind n findnext 1
-bind N findnext -1
-bind <Space>n nohlsearch
+jsb tri.config.set("nmaps", "/", "fillcmdline find")
+jsb tri.config.set("nmaps", "n", "findnext 1")
+jsb tri.config.set("nmaps", "N", "findnext -1")
+jsb tri.config.set("nmaps", "<Space>n", "nohlsearch")
 
 " Tabs
-bind x composite tabclose | tab #
-bind yt tabduplicate
-" bind < tabmove -1
-" bind > tabmove +1
-set nmaps.< tabmove -1
-set nmaps.> tabmove +1
-bind X undo
+jsb tri.config.set("nmaps", "x", "composite tabclose | tab #")
+jsb tri.config.set("nmaps", "yt", "tabduplicate")
+jsb tri.config.set("nmaps", "<", "tabmove -1")
+jsb tri.config.set("nmaps", ">", "tabmove +1")
+jsb tri.config.set("nmaps", "X", "undo")
 
 " Links
-bind f hint
-bind F hint -t
+jsb tri.config.set("nmaps", "f", "hint")
+jsb tri.config.set("nmaps", "F", "hint -t")
 
 " Copy And Paste
-bind yy clipboard yank
+jsb tri.config.set("nmaps", "yy", "clipboard yank")
 
 " View
-bind <C-y> fullscreen
-bind <ArrowUp> zoom +10 true
-bind <ArrowDown> zoom -10 true
+jsb tri.config.set("nmaps", "<C-y>", "fullscreen")
+jsb tri.config.set("nmaps", "<ArrowUp>", "zoom +10 true")
+jsb tri.config.set("nmaps", "<ArrowDown>", "zoom -10 true")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
