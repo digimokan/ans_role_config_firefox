@@ -54,6 +54,8 @@ Install and configure the Firefox browser.
        - name: "Install and configure the Firefox browser"
          ansible.builtin.include_role:
            name: ans_role_config_firefox
+         vars:
+           user_name: "my_user_name"
    ```
 
 ## Role Options
