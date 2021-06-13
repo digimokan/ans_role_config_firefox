@@ -2,15 +2,10 @@
 #   http://kb.mozillazine.org/About:config_entries
 #   https://github.com/pyllyukko/user.js/blob/master/user.js
 
-- ansible.builtin.include_tasks: privacy_security_settings.yml
-
-- ansible.builtin.include_tasks: general_ui_settings.yml
-
-- ansible.builtin.include_tasks: menu_page_ui_settings.yml
-
-- ansible.builtin.include_tasks: search_settings.yml
-
-- ansible.builtin.include_tasks: update_settings.yml
-
-- ansible.builtin.include_tasks: extension_settings.yml
+- ansible.builtin.include_tasks: extensions.yml
+- ansible.builtin.include_tasks: menu_page.yml
+- ansible.builtin.include_tasks: privacy_security.yml
+- ansible.builtin.include_tasks: search.yml
+- ansible.builtin.include_tasks: ui.yml
+- ansible.builtin.include_tasks: update.yml
 

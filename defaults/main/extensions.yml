@@ -10,3 +10,9 @@ install_tridactyl_ext: false
 # install built-in google-widevine add-on for DRM content (e.g. Netflix)
 install_google_widevine_drm_addon: false
 
+# enable Pocket content saving/viewing built-in extension
+enable_pocket_extension: false
+
+# allow user to install new extensions via the browser GUI
+allow_user_extension_install: false
+
