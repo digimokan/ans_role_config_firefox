@@ -9,11 +9,7 @@ galaxy_info:
         - all
   galaxy_tags:
     - archlinux
+    - freebsd
     - browser
     - firefox
-
-dependencies:
-  - src: https://github.com/digimokan/ans_role_config_unofficial_packages
-    tags:
-      - never
 

@@ -64,10 +64,6 @@ See the role `defaults` file, for overridable vars:
 
   * [defaults/main.yml](../defaults/main.yml)
 
-## Role Dependencies
-
-* [ans_role_config_unofficial_packages](https://github.com/digimokan/ans_role_config_unofficial_packages)
-
 Define these _required_ vars for the role:
 
   * `user_name`: name of primary Firefox user to configure the application for
