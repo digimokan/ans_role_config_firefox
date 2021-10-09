@@ -7,7 +7,6 @@
     create: yes
     state: present
     owner: 'root'
-    group: 'root'
     mode: '644'
   become: true
   become_user: root
