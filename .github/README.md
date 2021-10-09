@@ -24,6 +24,7 @@ Install and configure the Firefox browser.
 ## Supported Operating Systems
 
 * Arch Linux.
+* FreeBSD.
 
 ## Quick Start
 
