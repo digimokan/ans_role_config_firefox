@@ -1,3 +1,39 @@
-- ansible.builtin.include_tasks: archlinux/main.yml
-  when: ansible_os_family == "Archlinux"
+- name: "Install main 'firefox' package"
+  ansible.builtin.package:
+    name: firefox
+    state: present
+  become: true
+  become_user: root
+
+# - name: "Install 'firefox-extension-https-everywhere' package"
+#   community.general.pacman:
+#     name: firefox-extension-https-everywhere
+#     state: present
+#   become: true
+#   become_user: root
+#   when: install_https_everywhere_ext
+
+# - name: "Install 'firefox-ublock-origin' package"
+#   community.general.pacman:
+#     name: firefox-ublock-origin
+#     state: present
+#   become: true
+#   become_user: root
+#   when: install_ublock_origin_ext
+
+# - name: "Install 'firefox-tridactyl' package"
+#   community.general.pacman:
+#     name: firefox-tridactyl
+#     state: present
+#   become: true
+#   become_user: root
+#   when: install_tridactyl_ext
+
+# - name: "Install {{ package_name }} package"
+#   ansible.builtin.include_role:
+#     name: ans_role_config_unofficial_packages
+#     tasks_from: inc/add_package.yml
+#   vars:
+#     package_name: "firefox-tridactyl-native"
+#   when: install_tridactyl_ext
 

@@ -1,0 +1,10 @@
+- name: "Create firefox settings-redirect file 'local-settings.js'"
+  ansible.builtin.template:
+    dest: "{{ redirect_file_path }}"
+    src: 'local-settings.j2'
+    owner: 'root'
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
+
