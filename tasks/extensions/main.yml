@@ -38,7 +38,7 @@
 
 - name: "Define extension-install entries string"
   ansible.builtin.set_fact:
-    ext_install_entries: "{{ ext_list | join() }}"
+    ext_install_entries: "{{ ext_list | join() | indent(width=6, indentfirst=false) }}"
 
 - name: "Create firefox 'policies.json' settings file, with extension-install list"
   ansible.builtin.template:
