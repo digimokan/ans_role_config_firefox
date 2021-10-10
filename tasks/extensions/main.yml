@@ -1,4 +1,5 @@
 # Deploying extensions via policies:
+#   https://github.com/mozilla/policy-templates
 #   https://github.com/mozilla/policy-templates#extensionsettings
 # To find an extension's "Extension ID" dictionary key
 #   1. Install the extension.
@@ -35,6 +36,18 @@
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
       }
   when: install_ublock_origin_ext
+
+- name: "Define extension-install entry for Tridactyl"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "tridactyl.vim@cmcaine.co.uk": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tridactyl-vim/latest.xpi"
+      }
+  when: install_tridactyl_ext
 
 - name: "Define extension-install entries string"
   ansible.builtin.set_fact:
