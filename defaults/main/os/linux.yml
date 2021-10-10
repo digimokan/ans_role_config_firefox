@@ -4,3 +4,6 @@ linux_settings_file_path: '/usr/lib/firefox/mozilla.cfg'
 # settings redirect-to-main-settings file
 linux_redirect_file_path: "/usr/lib/firefox/defaults/pref/local-settings.js"
 
+# firefox system-wide policies file
+linux_policies_file_path: "/usr/lib/firefox/distribution/policies.json"
+

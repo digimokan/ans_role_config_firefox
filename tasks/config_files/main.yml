@@ -8,3 +8,12 @@
   become: true
   become_user: root
 
+- name: "Create system-wide firefox policies directory, if not exist"
+  ansible.builtin.file:
+    path: "{{ policies_file_path | dirname }}"
+    state: directory
+    owner: 'root'
+    mode: '755'
+  become: true
+  become_user: root
+

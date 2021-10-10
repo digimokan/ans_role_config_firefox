@@ -1,6 +1,8 @@
 # Preferences descriptions:
 #   http://kb.mozillazine.org/About:config_entries
 #   https://github.com/pyllyukko/user.js/blob/master/user.js
+# View current active preferences:
+#   about:config
 
 - ansible.builtin.include_tasks: extensions.yml
 - ansible.builtin.include_tasks: menu_page.yml

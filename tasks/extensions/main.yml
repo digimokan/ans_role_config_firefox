@@ -1,0 +1,52 @@
+# Deploying extensions via policies:
+#   https://github.com/mozilla/policy-templates#extensionsettings
+# To find an extension's "Extension ID" dictionary key
+#   1. Install the extension.
+#   2. Go to "about:support" and find the ID in the "Add-ons" section
+#   *  CAUTION: the ID letters upper/lower case must match exactly!
+# To find an extension's name for the "install_url" element key
+#   1. Go to the extension's page on https://addons.mozilla.org
+#   2. Use "https://addons.mozilla.org/firefox/addon/[ext name]" in browser url
+
+- name: "Initialize extension-install entries list"
+  ansible.builtin.set_fact:
+    ext_list: []
+
+- name: "Define extension-install entry for HTTPS Everywhere"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "https-everywhere@eff.org": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/latest.xpi"
+      }
+  when: install_https_everywhere_ext
+
+- name: "Define extension-install entry for uBlock Origin"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "uBlock0@raymondhill.net": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
+      }
+  when: install_ublock_origin_ext
+
+- name: "Define extension-install entries string"
+  ansible.builtin.set_fact:
+    ext_install_entries: "{{ ext_list | join() }}"
+
+- name: "Create firefox 'policies.json' settings file, with extension-install list"
+  ansible.builtin.template:
+    dest: "{{ policies_file_path }}"
+    src: 'policies.j2'
+    owner: 'root'
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
+

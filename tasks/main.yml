@@ -3,6 +3,7 @@
   vars:
     settings_file_path: "{{ linux_settings_file_path }}"
     redirect_file_path: "{{ linux_redirect_file_path }}"
+    policies_file_path: "{{ linux_policies_file_path }}"
   when: ansible_system == "Linux"
 
 - name: "Run all role tasks for FreeBSD"
@@ -10,5 +11,6 @@
   vars:
     settings_file_path: "{{ freebsd_settings_file_path }}"
     redirect_file_path: "{{ freebsd_redirect_file_path }}"
+    policies_file_path: "{{ freebsd_policies_file_path }}"
   when: ansible_os_family == "FreeBSD"
 
