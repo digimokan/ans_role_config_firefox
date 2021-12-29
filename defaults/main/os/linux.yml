@@ -7,3 +7,6 @@ linux_redirect_file_path: "/usr/lib/firefox/defaults/pref/local-settings.js"
 # firefox system-wide policies file
 linux_policies_file_path: "/usr/lib/firefox/distribution/policies.json"
 
+# vimium extension config file (see install limitations noted in config file)
+linux_vimium_config_file_path: '/usr/lib/firefox/ansible_vimium.json'
+

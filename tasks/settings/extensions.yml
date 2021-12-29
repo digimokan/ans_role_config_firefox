@@ -33,24 +33,12 @@
     setting: "media.eme.enabled"
     value: "{{ 'true' if install_google_widevine_drm_addon else 'false' }}"
 
-- name: "Emplace settings file for tridactyl extension"
-  block:
-    - name: "Create tridactyl config dir at {{ tridactylrc_path | dirname }}"
-      ansible.builtin.file:
-        path: "{{ tridactylrc_path | dirname }}"
-        state: directory
-        owner: "{{ user_name }}"
-        mode: '755'
-    - name: "Add custom tridactyl settings file at '{{ tridactylrc_path }}'"
-      ansible.builtin.template:
-        dest: "{{ tridactylrc_path }}"
-        src: 'tridactylrc.j2'
-        owner: "{{ user_name }}"
-        mode: '644'
-        force: yes
+- name: "Configure the vimium extension"
+  ansible.builtin.include_role:
+    name: ans_role_config_vimium
   vars:
-    tridactylrc_path: "/home/{{ user_name }}/.config/tridactyl/tridactylrc"
-  become: true
-  become_user: root
-  when: install_tridactyl_ext
+    vimium_search_providers: "{{ firefox_search_providers }}"
+    vimium_config_file_path: "{{ os_vimium_config_file_path }}"
+    vimium_home_page: "{{ home_page }}"
+  when: install_vimium_ext
 

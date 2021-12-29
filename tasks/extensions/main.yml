@@ -37,17 +37,17 @@
       }
   when: install_ublock_origin_ext
 
-- name: "Define extension-install entry for Tridactyl"
+- name: "Define extension-install entry for Vimium"
   ansible.builtin.set_fact:
     ext_list: "{{ ext_list + [ entry ] }}"
   vars:
     entry: |-
       ,
-      "tridactyl.vim@cmcaine.co.uk": {
+      "{d7742d87-e61d-4b78-b8a1-b469842139fa}": {
         "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/tridactyl-vim/latest.xpi"
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi"
       }
-  when: install_tridactyl_ext
+  when: install_vimium_ext
 
 - name: "Define extension-install entries string"
   ansible.builtin.set_fact:
@@ -55,7 +55,7 @@
 
 - name: "Create firefox 'policies.json' settings file, with extension-install list"
   ansible.builtin.template:
-    dest: "{{ policies_file_path }}"
+    dest: "{{ os_policies_file_path }}"
     src: 'policies.j2'
     owner: 'root'
     mode: '644'

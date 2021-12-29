@@ -1,16 +1,18 @@
 - name: "Run all role tasks for Linux"
   ansible.builtin.include_tasks: run_all_tasks.yml
   vars:
-    settings_file_path: "{{ linux_settings_file_path }}"
-    redirect_file_path: "{{ linux_redirect_file_path }}"
-    policies_file_path: "{{ linux_policies_file_path }}"
+    os_settings_file_path: "{{ linux_settings_file_path }}"
+    os_redirect_file_path: "{{ linux_redirect_file_path }}"
+    os_policies_file_path: "{{ linux_policies_file_path }}"
+    os_vimium_config_file_path: "{{ linux_vimium_config_file_path }}"
   when: ansible_system == "Linux"
 
 - name: "Run all role tasks for FreeBSD"
   ansible.builtin.include_tasks: run_all_tasks.yml
   vars:
-    settings_file_path: "{{ freebsd_settings_file_path }}"
-    redirect_file_path: "{{ freebsd_redirect_file_path }}"
-    policies_file_path: "{{ freebsd_policies_file_path }}"
+    os_settings_file_path: "{{ freebsd_settings_file_path }}"
+    os_redirect_file_path: "{{ freebsd_redirect_file_path }}"
+    os_policies_file_path: "{{ freebsd_policies_file_path }}"
+    os_vimium_config_file_path: "{{ freebsd_vimium_config_file_path }}"
   when: ansible_os_family == "FreeBSD"
 

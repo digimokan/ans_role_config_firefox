@@ -1,6 +1,6 @@
 - name: "Create firefox settings-redirect file 'local-settings.js'"
   ansible.builtin.template:
-    dest: "{{ redirect_file_path }}"
+    dest: "{{ os_redirect_file_path }}"
     src: 'local-settings.j2'
     owner: 'root'
     mode: '644'
@@ -10,7 +10,7 @@
 
 - name: "Create system-wide firefox policies directory, if not exist"
   ansible.builtin.file:
-    path: "{{ policies_file_path | dirname }}"
+    path: "{{ os_policies_file_path | dirname }}"
     state: directory
     owner: 'root'
     mode: '755'

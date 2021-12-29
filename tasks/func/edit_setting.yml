@@ -1,6 +1,6 @@
 - name: "Edit firefox setting: {{ description }} to '{{ value }}'"
   ansible.builtin.blockinfile:
-    path: "{{ settings_file_path }}"
+    path: "{{ os_settings_file_path }}"
     insertafter: EOF
     block: "{{ setting_line }}"
     marker: "// {mark} ANSIBLE MANAGED BLOCK: {{ description }}"

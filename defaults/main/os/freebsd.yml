@@ -7,3 +7,6 @@ freebsd_redirect_file_path: "/usr/local/lib/firefox/defaults/pref/local-settings
 # firefox system-wide policies file
 freebsd_policies_file_path: "/usr/local/lib/firefox/distribution/policies.json"
 
+# vimium extension config file (see install limitations noted in config file)
+freebsd_vimium_config_file_path: '/usr/local/lib/firefox/ansible_vimium.json'
+
