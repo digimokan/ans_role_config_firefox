@@ -13,18 +13,6 @@
   ansible.builtin.set_fact:
     ext_list: []
 
-- name: "Define extension-install entry for HTTPS Everywhere"
-  ansible.builtin.set_fact:
-    ext_list: "{{ ext_list + [ entry ] }}"
-  vars:
-    entry: |-
-      ,
-      "https-everywhere@eff.org": {
-        "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/latest.xpi"
-      }
-  when: install_https_everywhere_ext
-
 - name: "Define extension-install entry for uBlock Origin"
   ansible.builtin.set_fact:
     ext_list: "{{ ext_list + [ entry ] }}"
