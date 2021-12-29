@@ -75,3 +75,10 @@
     setting: "network.trr.mode"
     value: "{{ 2 if use_dns_over_https else 5 }}"
 
+- name: "Set https-only-mode to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "enable https-only-mode"
+    setting: "dom.security.https_only_mode"
+    value: "{{ 'true' if enable_https_only_mode else 'false' }}"
+
