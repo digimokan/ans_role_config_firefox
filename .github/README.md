@@ -69,6 +69,10 @@ Define these _required_ vars for the role:
 
   * `user_name`: name of primary Firefox user to configure the application for
 
+## Role Dependencies
+
+* [ans_role_config_vimium](https://github.com/digimokan/ans_role_config_vimium)
+
 ## Contributing
 
 * Feel free to report a bug or propose a feature by opening a new
