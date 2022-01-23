@@ -27,3 +27,6 @@ hide_http_in_url_bar: false
 # guess 'www.mozilla.com' if 'mozilla' entered in url-bar
 guess_domain_names: false
 
+# On print, use browser print page, instead of opening system-default print dialog
+use_browser_print_page: false
+

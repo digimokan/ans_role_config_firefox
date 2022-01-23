@@ -68,3 +68,10 @@
     setting: "browser.fixup.alternate.enabled"
     value: "{{ 'true' if guess_domain_names else 'false' }}"
 
+- name: "Set use-browser-print-page to '{{ value }}'"
+  ansible.builtin.include_tasks: func/edit_bool_setting.yml
+  vars:
+    description: "use browser print page"
+    setting: "print.tab_modal.enabled"
+    value: "{{ 'true' if use_browser_print_page else 'false' }}"
+
