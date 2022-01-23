@@ -37,6 +37,18 @@
       }
   when: install_vimium_ext
 
+- name: "Define extension-install entry for bitwarden"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi"
+      }
+  when: install_bitwarden_ext
+
 - name: "Define extension-install entries string"
   ansible.builtin.set_fact:
     ext_install_entries: "{{ ext_list | join() | indent(width=6, first=false) }}"
