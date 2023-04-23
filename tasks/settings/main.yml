@@ -1,13 +1,38 @@
-# Preferences descriptions:
-#   http://kb.mozillazine.org/About:config_entries
-#   https://github.com/pyllyukko/user.js/blob/master/user.js
-# View current active preferences:
-#   about:config
+- name: "Create main firefox settings directory, if not exist"
+  ansible.builtin.file:
+    path: "{{ os_settings_file_path | dirname }}"
+    state: directory
+    owner: 'root'
+    mode: '755'
+  become: true
+  become_user: root
 
-- ansible.builtin.include_tasks: extensions.yml
-- ansible.builtin.include_tasks: menu_page.yml
-- ansible.builtin.include_tasks: privacy_security.yml
-- ansible.builtin.include_tasks: search.yml
-- ansible.builtin.include_tasks: ui.yml
-- ansible.builtin.include_tasks: update.yml
+- name: "Create main firefox settings file '{{ os_settings_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ os_settings_file_path }}"
+    src: 'mozilla_cfg.j2'
+    owner: 'root'
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
+
+- name: "Create firefox settings-redirect directory, if not exist"
+  ansible.builtin.file:
+    path: "{{ os_redirect_file_path | dirname }}"
+    state: directory
+    owner: 'root'
+    mode: '755'
+  become: true
+  become_user: root
+
+- name: "Create firefox settings-redirect file '{{ os_redirect_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ os_redirect_file_path }}"
+    src: 'local-settings.j2'
+    owner: 'root'
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
 

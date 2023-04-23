@@ -1,0 +1,59 @@
+# Deploying extensions via policies:
+#   https://github.com/mozilla/policy-templates
+#   https://github.com/mozilla/policy-templates#extensionsettings
+# To find an extension's "Extension ID" dictionary key
+#   1. Install the extension.
+#   2. Go to "about:support" and find the ID in the "Add-ons" section
+#   *  CAUTION: the ID letters upper/lower case must match exactly!
+# To find an extension's name for the "install_url" dictionary item
+#   1. Go to the extension's page on https://addons.mozilla.org
+#   2. Use "https://addons.mozilla.org/firefox/addon/[ext name]" in browser url
+
+- name: "Define extension-install entry for uBlock Origin"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "uBlock0@raymondhill.net": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
+      }
+  when: install_ublock_origin_ext
+
+- name: "Define extension-install entry for Vimium"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "{d7742d87-e61d-4b78-b8a1-b469842139fa}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/vimium-ff/latest.xpi"
+      }
+  when: install_vimium_ext
+
+- name: "Define extension-install entry for bitwarden"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi"
+      }
+  when: install_bitwarden_ext
+
+- name: "Define extension-install entry for user-agent-switcher"
+  ansible.builtin.set_fact:
+    ext_list: "{{ ext_list + [ entry ] }}"
+  vars:
+    entry: |-
+      ,
+      "{75afe46a-7a50-4c6b-b866-c43a1075b071}": {
+        "installation_mode": "force_installed",
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/user-agent-switcher-revived/latest.xpi"
+      }
+  when: install_user_agent_switcher_ext
+

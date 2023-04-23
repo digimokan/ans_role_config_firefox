@@ -1,0 +1,62 @@
+// ANSIBLE-MANAGED CONFIGURATION FILE
+// vim: set filetype=javascript:
+// Preferences descriptions:
+//   http://kb.mozillazine.org/About:config_entries
+//   https://github.com/pyllyukko/user.js/blob/master/user.js
+// View current active preferences:
+//   about:config
+
+lockPref("xpinstall.enabled", {{ 'true' if allow_user_extension_install else 'false' }});
+pref("browser.pocket.enabled", {{ 'true' if enable_pocket_extension else 'false' }});
+pref("extensions.pocket.enabled", {{ 'true' if enable_pocket_extension else 'false' }});
+pref("browser.newtabpage.activity-stream.feeds.section.topstories", {{ 'true' if enable_pocket_extension else 'false' }});
+pref("media.eme.enabled", {{ 'true' if install_google_widevine_drm_addon else 'false' }});
+pref("browser.newtabpage.enabled", {{ 'true' if show_menu_page_in_new_tab else 'false' }});
+pref("browser.newtabpage.activity-stream.feeds.topsites", {{ 'true' if show_top_sites_row else 'false' }});
+pref("browser.newtabpage.activity-stream.showSponsored", {{ 'true' if show_sponsored_in_top_sites_row else 'false' }});
+pref("browser.newtabpage.activity-stream.showSponsoredTopSites", {{ 'true' if show_sponsored_in_top_sites_row else 'false' }});
+pref("browser.newtabpage.activity-stream.asrouter.userprefs.cfr", {{ 'true' if recommend_extensions else 'false' }});
+pref("browser.newtabpage.activity-stream.feeds.section.highlights", {{ 'true' if (show_visited_pages_in_menu_page_highlight_rows or show_bookmarks_in_menu_page_highlight_rows or show_downloads_in_menu_page_highlight_rows) else 'false' }});
+pref("browser.newtabpage.activity-stream.section.highlights.rows", {{ num_highlight_rows }});
+pref("browser.newtabpage.activity-stream.section.highlights.includeVisited", {{ 'true' if show_visited_pages_in_menu_page_highlight_rows else 'false' }});
+pref("browser.newtabpage.activity-stream.section.highlights.includeBookmarks", {{ 'true' if show_bookmarks_in_menu_page_highlight_rows else 'false' }});
+pref("browser.newtabpage.activity-stream.section.highlights.includeDownloads", {{ 'true' if show_downloads_in_menu_page_highlight_rows else 'false' }});
+pref("browser.aboutHomeSnippets.updateUrl", {{ 'true' if show_mozilla_news_in_menu_page else 'false' }});
+pref("browser.newtabpage.activity-stream.feeds.snippets", {{ 'true' if show_mozilla_news_in_menu_page else 'false' }});
+pref("signon.rememberSignons", {{ 'true' if enable_password_manager else 'false' }});
+pref("browser.formfill.enable", {{ 'true' if save_user_form_data else 'false' }});
+pref("signon.autofillForms", {{ 'true' if auto_fill_form_data else 'false' }});
+pref("breakpad.reportURL", "{{ 'https://crash-stats.mozilla.org/report/index/' if send_app_crash_reports else '' }}");
+pref("browser.tabs.crashReporting.sendReport", {{ 'true' if send_browser_tab_crash_reports else 'false' }});
+pref("browser.crashReports.unsubmittedCheck.enabled", {{ 'true' if show_crash_report_dialog else 'false' }});
+pref("browser.discovery.enabled", {{ 'true' if recommend_extensions else 'false' }});
+pref("datareporting.healthreport.uploadEnabled", {{ 'true' if send_tech_interaction_data_to_mozilla else 'false' }});
+pref("app.shield.optoutstudies.enabled", {{ 'true' if opt_in_and_send_studies_data_to_mozilla else 'false' }});
+pref("toolkit.telemetry.pioneer-new-studies-available", {{ 'true' if opt_in_and_send_studies_data_to_mozilla else 'false' }});
+pref("network.trr.mode", {{ 2 if use_dns_over_https else 5 }});
+pref("dom.security.https_only_mode", {{ 'true' if enable_https_only_mode else 'false' }});
+pref("browser.search.widget.inNavBar", {{ 'true' if show_dedicated_search_bar else 'false' }});
+pref("browser.search.suggest.enabled", {{ 'true' if show_live_search_suggestions else 'false' }});
+pref("browser.urlbar.suggest.searches", {{ 'true' if show_live_search_suggestions else 'false' }});
+pref("browser.urlbar.showSearchSuggestionsFirst", {{ 'true' if show_live_url_bar_search_suggestions_first else 'false' }});
+pref("browser.urlbar.suggest.bookmark", {{ 'true' if show_live_url_bar_bookmark_suggestions else 'false' }});
+pref("browser.urlbar.suggest.engines", {{ 'true' if show_live_url_bar_search_engine_suggestions else 'false' }});
+pref("browser.urlbar.suggest.history", {{ 'true' if show_live_url_bar_history_suggestions else 'false' }});
+pref("browser.urlbar.suggest.openpage", {{ 'true' if show_live_url_bar_open_page_suggestions else 'false' }});
+pref("browser.urlbar.suggest.topsites", {{ 'true' if show_live_url_bar_top_site_suggestions else 'false' }});
+pref("browser.urlbar.autoFill", {{ 'true' if show_urlbar_inline_autocomplete else 'false' }});
+pref("browser.startup.homepage", "{{ home_page }}");
+pref("browser.startup.page", {{ 3 if show_restored_tabs_on_startup else 1 }});
+pref("browser.tabs.warnOnClose", {{ 'true' if warn_on_close_tabs else 'false' }});
+pref("browser.tabs.loadInBackground", {{ 'true' if open_new_tab_url_in_background else 'false' }});
+pref("browser.shell.checkDefaultBrowser", {{ 'true' if check_if_default_browser else 'false' }});
+pref("browser.toolbars.bookmarks.showOtherBookmarks", {{ 'true' if show_other_bookmarks_section else 'false' }});
+pref("browser.startup.homepage_override.mstone", "{{ 'ignore' if skip_first_run_pages else '' }}");
+pref("datareporting.policy.dataSubmissionPolicyBypassNotification", {{ 'true' if skip_first_run_pages else 'false' }});
+pref("browser.fixup.alternate.enabled", {{ 'true' if guess_domain_names else 'false' }});
+pref("print.tab_modal.enabled", {{ 'true' if use_browser_print_page else 'false' }});
+pref("app.update.enabled", {{ 'true' if auto_update_app else 'false' }});
+pref("extensions.systemAddon.update.enabled", {{ 'true' if auto_update_system_addons else 'false' }});
+pref("browser.search.update", {{ 'true' if auto_update_search_engines else 'false' }});
+pref("extensions.update.enabled", {{ 'true' if auto_update_extensions else 'false' }});
+
