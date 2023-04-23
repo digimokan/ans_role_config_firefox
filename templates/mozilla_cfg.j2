@@ -53,6 +53,7 @@ pref("browser.shell.checkDefaultBrowser", {{ 'true' if check_if_default_browser 
 pref("browser.toolbars.bookmarks.showOtherBookmarks", {{ 'true' if show_other_bookmarks_section else 'false' }});
 pref("browser.startup.homepage_override.mstone", "{{ 'ignore' if skip_first_run_pages else '' }}");
 pref("datareporting.policy.dataSubmissionPolicyBypassNotification", {{ 'true' if skip_first_run_pages else 'false' }});
+pref("browser.urlbar.trimURLs", {{ 'true' if hide_http_in_url_bar else 'false' }});
 pref("browser.fixup.alternate.enabled", {{ 'true' if guess_domain_names else 'false' }});
 pref("print.tab_modal.enabled", {{ 'true' if use_browser_print_page else 'false' }});
 pref("app.update.enabled", {{ 'true' if auto_update_app else 'false' }});
