@@ -24,7 +24,7 @@
     src: 'policies.j2'
     owner: 'root'
     mode: '644'
-    force: yes
+    force: true
   become: true
   become_user: root
 
