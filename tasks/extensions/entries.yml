@@ -51,9 +51,9 @@
   vars:
     entry: |-
       ,
-      "{75afe46a-7a50-4c6b-b866-c43a1075b071}": {
+      "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}": {
         "installation_mode": "force_installed",
-        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/user-agent-switcher-revived/latest.xpi"
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/user-agent-string-switcher/latest.xpi"
       }
   when: install_user_agent_switcher_ext
 
