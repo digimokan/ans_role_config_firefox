@@ -57,22 +57,22 @@ Install and configure the Firefox browser.
            name: ans_role_config_firefox
            public: true
          vars:
-           user_name: "my_user_name"
+           firefox_user_name: "my_user_name"
    ```
 
 ## Role Options
 
-See the role `defaults` file, for overridable vars:
+Vars that must be defined when including the role in the playbook:
 
-  * [defaults/main.yml](../defaults/main.yml)
+  * [dependencies](../defaults/main/dependencies/main.yml)
 
-Define these _required_ vars for the role:
+Vars with default values, which can be overridden in the playbook:
 
-  * `user_name`: name of primary Firefox user to configure the application for
+  * [overridable](../defaults/main/overridable)
 
-## Role Dependencies
+Vars defined by this role, exported with `public: true`, for use in other roles:
 
-* [ans_role_config_vimium](https://github.com/digimokan/ans_role_config_vimium)
+  * [export](../defaults/main/export/main.yml)
 
 ## Contributing
 
