@@ -1,17 +1,17 @@
 - name: "Initialize extension-install entries list"
   ansible.builtin.set_fact:
-    ext_list: []
+    firefox_ext_list: []
 
 - name: "Add each option extension to the entries list"
   ansible.builtin.include_tasks: entries.yml
 
 - name: "Construct extension-install-entries-string from the entries list"
   ansible.builtin.set_fact:
-    ext_install_entries: "{{ ext_list | join() | indent(width=6, first=false) }}"
+    firefox_ext_install_entries: "{{ firefox_ext_list | join() | indent(width=6, first=false) }}"
 
 - name: "Create system-wide firefox policies directory, if not exist"
   ansible.builtin.file:
-    path: "{{ os_policies_file_path | dirname }}"
+    path: "{{ firefox_os_policies_file_path | dirname }}"
     state: directory
     owner: 'root'
     mode: '755'
@@ -20,7 +20,7 @@
 
 - name: "Create firefox 'policies.json' settings file, with extension-install list"
   ansible.builtin.template:
-    dest: "{{ os_policies_file_path }}"
+    dest: "{{ firefox_os_policies_file_path }}"
     src: 'policies.j2'
     owner: 'root'
     mode: '644'
@@ -33,7 +33,7 @@
     name: ans_role_config_vimium
   vars:
     vimium_search_providers: "{{ firefox_search_providers }}"
-    vimium_config_file_path: "{{ os_vimium_config_file_path }}"
-    vimium_home_page: "{{ home_page }}"
-  when: install_vimium_ext
+    vimium_config_file_path: "{{ firefox_os_vimium_config_file_path }}"
+    vimium_home_page: "{{ firefox_home_page }}"
+  when: firefox_install_vimium_ext
 

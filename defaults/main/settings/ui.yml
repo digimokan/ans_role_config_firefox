@@ -1,32 +1,32 @@
 # url to show when "home" button is clicked
 # set to 'about:home' to show the firefox menu-page
-home_page: 'https://www.duckduckgo.com'
+firefox_home_page: 'https://www.duckduckgo.com'
 
 # on startup, show restored tabs from last session (true), or show home page (false)
-show_restored_tabs_on_startup: true
+firefox_show_restored_tabs_on_startup: true
 
 # show a warning dialog when closing the browser, if multiple tabs are open
-warn_on_close_tabs: false
+firefox_warn_on_close_tabs: false
 
 # open new tab in background, when clicking url that opens new tab
 # note: if false, switch to the new tab immediately
-open_new_tab_url_in_background: false
+firefox_open_new_tab_url_in_background: false
 
 # check and prompt to make firefox the default browser
-check_if_default_browser: false
+firefox_check_if_default_browser: false
 
 # show the "other" section in bookmarks
-show_other_bookmarks_section: false
+firefox_show_other_bookmarks_section: false
 
 # skip privacy, getting-started, etc pages on the first-run of firefox browser
-skip_first_run_pages: true
+firefox_skip_first_run_pages: true
 
 # hide 'http://' and single trailing '/' in url-bar
-hide_http_in_url_bar: false
+firefox_hide_http_in_url_bar: false
 
 # guess 'www.mozilla.com' if 'mozilla' entered in url-bar
-guess_domain_names: false
+firefox_guess_domain_names: false
 
 # On print, use browser print page, instead of opening system-default print dialog
-use_browser_print_page: false
+firefox_use_browser_print_page: false
 

@@ -3,8 +3,8 @@
     "ExtensionSettings": {
       "*": {
         "blocked_install_message": "The system administrator has blocked extension installation.",
-        "installation_mode": "{{ 'allowed' if allow_user_extension_install else 'blocked' }}"
-      }{{ ext_install_entries }}
+        "installation_mode": "{{ 'allowed' if firefox_allow_user_extension_install else 'blocked' }}"
+      }{{ firefox_ext_install_entries }}
     }
   }
 }

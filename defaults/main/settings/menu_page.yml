@@ -1,24 +1,24 @@
 # show the firefox menu-page on opening new tab (if false, show blank page)
-show_menu_page_in_new_tab: true
+firefox_show_menu_page_in_new_tab: true
 
 # show top-sites-row (aka most-visited pages) in menu-page
-show_top_sites_row: false
+firefox_show_top_sites_row: false
 
 # show sponsored sites (amazon, facebook, etc) in top-sites-row
-show_sponsored_in_top_sites_row: false
+firefox_show_sponsored_in_top_sites_row: false
 
 # show visited-pages in menu-page highlight-rows
-num_highlight_rows: 2
+firefox_num_highlight_rows: 2
 
 # show visited-pages in menu-page highlight-rows
-show_visited_pages_in_menu_page_highlight_rows: true
+firefox_show_visited_pages_in_menu_page_highlight_rows: true
 
 # show bookmarks in menu-page highlight-rows
-show_bookmarks_in_menu_page_highlight_rows: true
+firefox_show_bookmarks_in_menu_page_highlight_rows: true
 
 # show downloads in menu-page highlight-rows
-show_downloads_in_menu_page_highlight_rows: false
+firefox_show_downloads_in_menu_page_highlight_rows: false
 
 # show mozilla news/snippets in menu-page
-show_mozilla_news_in_menu_page: false
+firefox_show_mozilla_news_in_menu_page: false
 

@@ -1,33 +1,33 @@
 # enable firefox's built-in password manager
-enable_password_manager: false
+firefox_enable_password_manager: false
 
 # save all form data entered by user
-save_user_form_data: true
+firefox_save_user_form_data: true
 
 # auto-fill forms with saved user form data
-auto_fill_form_data: true
+firefox_auto_fill_form_data: true
 
 # send application crash reports to mozilla crash-report server
-send_app_crash_reports: false
+firefox_send_app_crash_reports: false
 
 # send browser-tab crash reports to mozilla servers
-send_browser_tab_crash_reports: false
+firefox_send_browser_tab_crash_reports: false
 
 # query user with crash-report dialog
-show_crash_report_dialog: false
+firefox_show_crash_report_dialog: false
 
 # recommend/suggest related extensions (in the menu-page, and elsewhere)
-recommend_extensions: false
+firefox_recommend_extensions: false
 
 # send "technical and interaction" data to mozilla
-send_tech_interaction_data_to_mozilla: false
+firefox_send_tech_interaction_data_to_mozilla: false
 
 # participate in "studies" and send the studies data to mozilla
-opt_in_and_send_studies_data_to_mozilla: false
+firefox_opt_in_and_send_studies_data_to_mozilla: false
 
 # use dns-over-https feature (2020-04: mozilla still uses cloudflare for this)
-use_dns_over_https: false
+firefox_use_dns_over_https: false
 
 # enable https-only-mode for browsing, and warn for http pages
-enable_https_only_mode: true
+firefox_enable_https_only_mode: true
 
