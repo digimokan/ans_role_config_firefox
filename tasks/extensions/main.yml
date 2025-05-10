@@ -11,7 +11,7 @@
 
 - name: "Create system-wide firefox policies directory, if not exist"
   ansible.builtin.file:
-    path: "{{ firefox_os_policies_file_path | dirname }}"
+    path: "{{ firefox_sys_policies_file_path | dirname }}"
     state: directory
     owner: 'root'
     mode: '755'
@@ -20,7 +20,7 @@
 
 - name: "Create firefox 'policies.json' settings file, with extension-install list"
   ansible.builtin.template:
-    dest: "{{ firefox_os_policies_file_path }}"
+    dest: "{{ firefox_sys_policies_file_path }}"
     src: 'policies.j2'
     owner: 'root'
     mode: '644'
@@ -33,7 +33,7 @@
     name: ans_role_config_vimium
   vars:
     vimium_search_providers: "{{ firefox_search_providers }}"
-    vimium_config_file_path: "{{ firefox_os_vimium_config_file_path }}"
+    vimium_config_file_path: "{{ firefox_sys_vimium_config_file_path }}"
     vimium_home_page: "{{ firefox_home_page }}"
   when: firefox_install_vimium_ext
 
