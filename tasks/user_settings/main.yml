@@ -4,3 +4,6 @@
 - name: "Create user settings file"
   ansible.builtin.include_tasks: settings.yml
 
+- name: "Link to saved cache files, if they exist"
+  ansible.builtin.include_tasks: cache_saves.yml
+

@@ -4,7 +4,7 @@ firefox_user_settings_subdir: ".mozilla/firefox"
 # user settings filename
 firefox_user_settings_filename: "user.js"
 
-# user saved bookmarks and browse history database filename
+# user saved bookmarks and browse-history database filename
 firefox_user_bookmarks_and_browse_history_filename: "places.sqlite"
 
 # user saved bookmarks icons filename
@@ -12,4 +12,9 @@ firefox_user_bookmarks_icons_filename: "favicons.sqlite"
 
 # user saved-data-entered-into-forms and search-bar-history filename
 firefox_user_search_and_forms_history_filename: "formhistory.sqlite"
+
+# try to make symlinks to saved firefox history/etc cache files
+firefox_try_link_to_saved_bookmarks_and_browse_history_path: ""
+firefox_try_link_to_saved_bookmarks_icons_history_path: ""
+firefox_try_link_to_saved_search_and_forms_history_path: ""
 

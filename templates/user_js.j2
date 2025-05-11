@@ -12,6 +12,8 @@
 //   https://github.com/pyllyukko/user.js/blob/master/user.js
 // View current active preferences:
 //   about:config
+// Warning:
+//   'user_pref()' must be used - 'pref()' is not a valid function here
 
 user_pref("browser.pocket.enabled", {{ 'true' if firefox_enable_pocket_extension else 'false' }});
 user_pref("extensions.pocket.enabled", {{ 'true' if firefox_enable_pocket_extension else 'false' }});
