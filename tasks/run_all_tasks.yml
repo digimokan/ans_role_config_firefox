@@ -7,3 +7,6 @@
 - name: "Configure system-wide, default Firefox browser settings"
   ansible.builtin.include_tasks: sys_settings/main.yml
 
+- name: "Configure user Firefox browser settings"
+  ansible.builtin.include_tasks: user_settings/main.yml
+

@@ -1,0 +1,10 @@
+- name: "Create user settings file '{{ firefox_user_settings_file_path }}'"
+  ansible.builtin.template:
+    dest: "{{ firefox_user_settings_file_path }}"
+    src: 'user_js.j2'
+    force: true
+  vars:
+    firefox_user_settings_file_path: "{{ firefox_user_default_profile_dir }}/{{ firefox_user_settings_filename }}"
+  become: true
+  become_user: "{{ firefox_user_name }}"
+

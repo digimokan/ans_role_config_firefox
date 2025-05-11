@@ -1,0 +1,6 @@
+- name: "Create user default profile"
+  ansible.builtin.include_tasks: create_user_profile.yml
+
+- name: "Create user settings file"
+  ansible.builtin.include_tasks: settings.yml
+
