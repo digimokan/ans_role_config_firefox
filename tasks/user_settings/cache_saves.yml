@@ -5,12 +5,12 @@
     firefox_cache_file_path: "{{ firefox_try_link_to_saved_bookmarks_and_browse_history_path }}"
   when: firefox_try_link_to_saved_bookmarks_and_browse_history_path | length > 0
 
-- name: "Link to saved firefox bookmarks icons database file"
+- name: "Link to saved firefox bookmark-icons database file"
   ansible.builtin.include_tasks: link_to_file.yml
   vars:
-    firefox_target_file_path: "{{ firefox_user_default_profile_dir }}/{{ firefox_user_bookmarks_icons_filename }}"
-    firefox_cache_file_path: "{{ firefox_try_link_to_saved_bookmarks_icons_history_path }}"
-  when: firefox_try_link_to_saved_bookmarks_icons_history_path | length > 0
+    firefox_target_file_path: "{{ firefox_user_default_profile_dir }}/{{ firefox_user_bookmark_icons_filename }}"
+    firefox_cache_file_path: "{{ firefox_try_link_to_saved_bookmark_icons_history_path }}"
+  when: firefox_try_link_to_saved_bookmark_icons_history_path | length > 0
 
 - name: "Link to saved firefox search and forms history database file"
   ansible.builtin.include_tasks: link_to_file.yml
