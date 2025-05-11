@@ -1,46 +1,60 @@
+- name: "Create user settings directory '{{ firefox_user_settings_dir }}', if not exist"
+  ansible.builtin.file:
+    path: "{{ firefox_user_settings_dir }}"
+    state: directory
+  become: true
+  become_user: "{{ firefox_user_name }}"
+
 - name: "Search for user default profile directory"
   ansible.builtin.find:
     paths: "{{ firefox_user_settings_dir }}"
     file_type: directory
     use_regex: true
     patterns: "^.*?\\.default-release$"
-  register: profile_dirs_matches
+  register: initial_profile_dirs_matches
   become: true
   become_user: "{{ firefox_user_name }}"
+
+- name: "Define firefox_user_default_profile_dir var: '{{ initial_profile_dirs_matches.files[0].path }}'"
+  ansible.builtin.set_fact:
+    firefox_user_default_profile_dir: "{{ initial_profile_dirs_matches.files[0].path }}"
+  when: initial_profile_dirs_matches.matched == 1
 
 - name: "Check that multiple user default profile directories do not exist"
   ansible.builtin.fail:
     msg: "Unexpectedly, found multiple .default-release user profile dirs in '{{ firefox_user_settings_dir }}'"
   become: true
   become_user: "{{ firefox_user_name }}"
-  when: profile_dirs_matches.matched > 1
+  when: initial_profile_dirs_matches.matched > 1
 
 - name: "Run firefox in headless mode to create the user default profile directory"
   ansible.builtin.command:
     cmd: "firefox --headless --screenshot /dev/null"
   become: true
   become_user: "{{ firefox_user_name }}"
-  when: profile_dirs_matches.matched == 0
+  when: initial_profile_dirs_matches.matched == 0
 
-- name: "Search for user default profile directory"
+- name: "Search for newly-created user default profile directory"
   ansible.builtin.find:
     paths: "{{ firefox_user_settings_dir }}"
     file_type: directory
     use_regex: true
     patterns: "^.*?\\.default-release$"
-  register: profile_dirs_matches
+  register: second_profile_dirs_matches
   become: true
   become_user: "{{ firefox_user_name }}"
-  when: profile_dirs_matches.matched != 0
+  when: initial_profile_dirs_matches.matched == 0
 
-- name: "Check that single user default profile directory exists"
+- name: "Check that newly-created single user default profile directory exists"
   ansible.builtin.fail:
     msg: "One .default-release user profile dir should exist in '{{ firefox_user_settings_dir }}'"
   become: true
   become_user: "{{ firefox_user_name }}"
-  when: profile_dirs_matches.matched != 1
+  when: (initial_profile_dirs_matches.matched == 0) and
+        (second_profile_dirs_matches.matched != 1)
 
-- name: "Define firefox_user_default_profile_dir var: '{{ profile_dirs_matches.files[0].path }}'"
+- name: "Define firefox_user_default_profile_dir var: '{{ second_profile_dirs_matches.files[0].path }}'"
   ansible.builtin.set_fact:
-    firefox_user_default_profile_dir: "{{ profile_dirs_matches.files[0].path }}"
+    firefox_user_default_profile_dir: "{{ second_profile_dirs_matches.files[0].path }}"
+  when: initial_profile_dirs_matches.matched == 0
 
