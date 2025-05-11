@@ -21,7 +21,7 @@
 - name: "Create firefox 'policies.json' settings file, with extension-install list"
   ansible.builtin.template:
     dest: "{{ firefox_sys_policies_file_path }}"
-    src: 'policies.j2'
+    src: 'policies_json.j2'
     owner: 'root'
     mode: '644'
     force: true

@@ -1,4 +1,4 @@
-- name: "Create main firefox settings directory, if not exist"
+- name: "Create system-wide firefox settings directory, if not exist"
   ansible.builtin.file:
     path: "{{ firefox_sys_settings_file_path | dirname }}"
     state: directory
@@ -7,7 +7,7 @@
   become: true
   become_user: root
 
-- name: "Create main firefox settings file '{{ firefox_sys_settings_file_path }}'"
+- name: "Create system-wide firefox settings file '{{ firefox_sys_settings_file_path }}'"
   ansible.builtin.template:
     dest: "{{ firefox_sys_settings_file_path }}"
     src: 'mozilla_cfg.j2'
@@ -17,7 +17,7 @@
   become: true
   become_user: root
 
-- name: "Create firefox settings-redirect directory, if not exist"
+- name: "Create system-wide firefox settings-redirect directory, if not exist"
   ansible.builtin.file:
     path: "{{ firefox_sys_redirect_file_path | dirname }}"
     state: directory
@@ -26,10 +26,10 @@
   become: true
   become_user: root
 
-- name: "Create firefox settings-redirect file '{{ firefox_sys_redirect_file_path }}'"
+- name: "Create system-wide firefox settings-redirect file '{{ firefox_sys_redirect_file_path }}'"
   ansible.builtin.template:
     dest: "{{ firefox_sys_redirect_file_path }}"
-    src: 'local-settings.j2'
+    src: 'local-settings_js.j2'
     owner: 'root'
     mode: '644'
     force: true

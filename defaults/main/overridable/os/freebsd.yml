@@ -1,7 +1,7 @@
-# main firefox settings file
-firefox_freebsd_sys_settings_file_path: '/usr/local/lib/firefox/mozilla.cfg'
+# main system-wide firefox settings file
+firefox_freebsd_sys_settings_file_path: "/usr/local/lib/firefox/mozilla.cfg"
 
-# settings redirect-to-main-settings file
+# settings redirect-to-main-system-wide-settings file
 firefox_freebsd_sys_redirect_file_path: "/usr/local/lib/firefox/defaults/pref/local-settings.js"
 
 # firefox system-wide policies file

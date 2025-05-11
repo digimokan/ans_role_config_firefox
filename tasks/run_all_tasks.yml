@@ -1,9 +1,9 @@
 - name: "Install main Firefox application"
   ansible.builtin.include_tasks: install/main.yml
 
-- name: "Configure system-wide, default Firefox browser settings"
-  ansible.builtin.include_tasks: settings/main.yml
+- name: "Add optional system-wide Firefox extensions"
+  ansible.builtin.include_tasks: sys_extensions/main.yml
 
-- name: "Add optional Firefox extensions"
-  ansible.builtin.include_tasks: extensions/main.yml
+- name: "Configure system-wide, default Firefox browser settings"
+  ansible.builtin.include_tasks: sys_settings/main.yml
 
