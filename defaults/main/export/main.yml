@@ -1,0 +1,7 @@
+# command to run to launch firefox
+firefox_main_cmd: "firefox"
+
+# url to show when "home" button is clicked
+# set to 'about:home' to show the firefox menu-page
+firefox_home_page: 'https://www.duckduckgo.com'
+

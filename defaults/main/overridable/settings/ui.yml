@@ -1,7 +1,3 @@
-# url to show when "home" button is clicked
-# set to 'about:home' to show the firefox menu-page
-firefox_home_page: 'https://www.duckduckgo.com'
-
 # on startup, show restored tabs from last session (true), or show home page (false)
 firefox_show_restored_tabs_on_startup: true
 

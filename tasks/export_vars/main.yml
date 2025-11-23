@@ -1,7 +1,3 @@
-- name: "Define export var 'firefox_main_cmd'"
-  ansible.builtin.set_fact:
-    firefox_main_cmd: "firefox"
-
 - name: "Define export var 'firefox_sys_vimium_config_file_path'"
   ansible.builtin.set_fact:
     firefox_sys_vimium_config_file_path: "{{ firefox_linux_sys_vimium_config_file_path }}"
