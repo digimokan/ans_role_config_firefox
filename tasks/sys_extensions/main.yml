@@ -28,12 +28,3 @@
   become: true
   become_user: root
 
-- name: "Configure the vimium extension"
-  ansible.builtin.include_role:
-    name: ans_role_config_vimium
-  vars:
-    vimium_search_providers: "{{ firefox_search_providers }}"
-    vimium_config_file_path: "{{ firefox_sys_vimium_config_file_path }}"
-    vimium_home_page: "{{ firefox_home_page }}"
-  when: firefox_install_vimium_ext
-

@@ -1,0 +1,16 @@
+- name: "Define export var 'firefox_main_cmd'"
+  ansible.builtin.set_fact:
+    firefox_main_cmd: "firefox"
+
+- name: "Define export var 'firefox_sys_vimium_config_file_path'"
+  ansible.builtin.set_fact:
+    firefox_sys_vimium_config_file_path: "{{ firefox_linux_sys_vimium_config_file_path }}"
+  when: firefox_install_vimium_ext and
+        (ansible_system == "Linux")
+
+- name: "Define export var 'firefox_sys_vimium_config_file_path'"
+  ansible.builtin.set_fact:
+    firefox_sys_vimium_config_file_path: "{{ firefox_freebsd_sys_vimium_config_file_path }}"
+  when: firefox_install_vimium_ext and
+        (ansible_os_family == "FreeBSD")
+

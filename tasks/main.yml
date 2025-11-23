@@ -4,7 +4,6 @@
     firefox_sys_settings_file_path: "{{ firefox_linux_sys_settings_file_path }}"
     firefox_sys_redirect_file_path: "{{ firefox_linux_sys_redirect_file_path }}"
     firefox_sys_policies_file_path: "{{ firefox_linux_sys_policies_file_path }}"
-    firefox_sys_vimium_config_file_path: "{{ firefox_linux_sys_vimium_config_file_path }}"
     firefox_user_settings_dir: "/home/{{ firefox_user_name }}/{{ firefox_user_settings_subdir }}"
   when: ansible_system == "Linux"
 
@@ -14,7 +13,6 @@
     firefox_sys_settings_file_path: "{{ firefox_freebsd_sys_settings_file_path }}"
     firefox_sys_redirect_file_path: "{{ firefox_freebsd_sys_redirect_file_path }}"
     firefox_sys_policies_file_path: "{{ firefox_freebsd_sys_policies_file_path }}"
-    firefox_sys_vimium_config_file_path: "{{ firefox_freebsd_sys_vimium_config_file_path }}"
     firefox_user_settings_dir: "/home/{{ firefox_user_name }}/{{ firefox_user_settings_subdir }}"
   when: ansible_os_family == "FreeBSD"
 

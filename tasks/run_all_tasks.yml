@@ -1,3 +1,6 @@
+- name: "Export variables for other roles to use"
+  ansible.builtin.include_tasks: export_vars/main.yml
+
 - name: "Install main Firefox application"
   ansible.builtin.include_tasks: install/main.yml
 

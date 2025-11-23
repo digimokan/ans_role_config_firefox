@@ -25,10 +25,3 @@ firefox_show_live_url_bar_top_site_suggestions: false
 # show url-bar inline autocomplete (show/highlight matched url after typed text)
 firefox_show_urlbar_inline_autocomplete: true
 
-# selectable search providers (currently only used by Vimium extension)
-# Note: Vimium will use the first row in this list as the default provider
-firefox_search_providers:
-  - { provider_name: 'DuckDuckGo', hotkeys: 'd', search_url: 'https://duckduckgo.com/?q=%s' }
-  - { provider_name: 'Google', hotkeys: 'g', search_url: 'https://www.google.com/search?hl=en&q=%s' }
-  - { provider_name: 'Wikipedia', hotkeys: 'w', search_url: 'https://en.wikipedia.org/?search=%s' }
-
